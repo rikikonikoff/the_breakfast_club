@@ -1,5 +1,5 @@
 {
-  "name": "boiler_plate",
+  "name": "the_breakfast_club",
   "version": "1.0.0",
   "description": "boiler plate rails with react",
   "main": "webpack.config.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "boiler_plate_rails"
+    "url": "the_breakfast_club"
   },
   "author": "Riki",
   "license": "ISC",
