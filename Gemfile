@@ -7,6 +7,8 @@ gem 'puma'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'jquery-rails'
+gem 'devise'
+gem 'omniauth'
 group :development do
   gem 'listen'
   gem 'spring'
