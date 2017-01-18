@@ -340,3 +340,28 @@ Migrating to DeviseCreateUsers (20170117190930)
   [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2017-01-18 14:00:49 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DishesController#index as HTML
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mDish Load (1.2ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  Rendered dishes/index.html.erb within layouts/application (10.3ms)
+Started GET "/" for 127.0.0.1 at 2017-01-18 14:00:50 -0500
+Processing by DishesController#index as HTML
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mDish Load (5.6ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  Rendered dishes/index.html.erb within layouts/application (7.3ms)
+Started GET "/" for 127.0.0.1 at 2017-01-18 14:00:54 -0500
+Processing by DishesController#index as HTML
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mDish Load (15.4ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  Rendered dishes/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 10215ms (Views: 10207.2ms | ActiveRecord: 5.6ms)
+
+
+Completed 200 OK in 10702ms (Views: 10692.6ms | ActiveRecord: 2.6ms)
+
+
+Completed 200 OK in 5070ms (Views: 5046.3ms | ActiveRecord: 15.4ms)
+
+
