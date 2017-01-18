@@ -1,9 +1,18 @@
 require 'rails_helper'
 
 feature "user views dishes" do
-  dish_1 = FactoryGirl.create(:dish)
-  dish_2 = FactoryGirl.create(:dish)
-  dish_3 = FactoryGirl.create(:dish)
+  let(:user) do
+    FactoryGirl.create(:user)
+  end
+  let(:dish_1) do
+    FactoryGirl.create(:dish)
+  end
+  let(:dish_2) do
+    FactoryGirl.create(:dish)
+  end
+  let(:dish_3) do
+    FactoryGirl.create(:dish)
+  end
 
   scenario "user views a list of dishes on index page successfully" do
     visit root_path
