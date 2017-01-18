@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/models/user.rb": [
+      "/Users/Audrey/challenges/the_breakfast_club/app/models/user.rb": [
         1,
         1,
         null,
@@ -17,21 +17,34 @@
         null,
         null
       ],
-      "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/models/application_record.rb": [
+      "/Users/Audrey/challenges/the_breakfast_club/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/helpers/application_helper.rb": [
+      "/Users/Audrey/challenges/the_breakfast_club/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/controllers/dishes_controller.rb": [
+      "/Users/Audrey/challenges/the_breakfast_club/app/controllers/application_controller.rb": [
         1,
         1,
         null,
         1,
-        6,
+        null,
+        1,
+        null,
+        1,
+        13,
+        null,
+        null
+      ],
+      "/Users/Audrey/challenges/the_breakfast_club/app/controllers/dishes_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        11,
         null,
         null,
         1,
@@ -62,46 +75,58 @@
         null,
         null
       ],
-      "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/controllers/application_controller.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/models/dish.rb": [
+      "/Users/Audrey/challenges/the_breakfast_club/app/models/dish.rb": [
         1,
         1,
         null,
         1,
         null
       ],
-      "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/channels/application_cable/channel.rb": [
+      "/Users/Audrey/challenges/the_breakfast_club/app/controllers/registrations_controller.rb": [
+        1,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/Audrey/challenges/the_breakfast_club/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/channels/application_cable/connection.rb": [
+      "/Users/Audrey/challenges/the_breakfast_club/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/controllers/users_controller.rb": [
+      "/Users/Audrey/challenges/the_breakfast_club/app/controllers/homes_controller.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/Audrey/challenges/the_breakfast_club/app/controllers/users_controller.rb": [
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0
       ],
-      "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/jobs/application_job.rb": [
+      "/Users/Audrey/challenges/the_breakfast_club/app/jobs/application_job.rb": [
         0,
         0
       ],
-      "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/mailers/application_mailer.rb": [
+      "/Users/Audrey/challenges/the_breakfast_club/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1484766751
+    "timestamp": 1484770560
   }
 }
