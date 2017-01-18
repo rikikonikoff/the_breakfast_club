@@ -1,0 +1,62 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/Audrey/challenges/the_breakfast_club/app/models/user.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/Audrey/challenges/the_breakfast_club/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/Audrey/challenges/the_breakfast_club/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/Audrey/challenges/the_breakfast_club/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/Audrey/challenges/the_breakfast_club/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/Audrey/challenges/the_breakfast_club/app/controllers/application_controller.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/Audrey/challenges/the_breakfast_club/app/controllers/users_controller.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/Audrey/challenges/the_breakfast_club/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/Audrey/challenges/the_breakfast_club/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1484754423
+  }
+}
