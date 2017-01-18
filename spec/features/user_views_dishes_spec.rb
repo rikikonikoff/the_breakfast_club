@@ -5,13 +5,13 @@ feature "user views dishes" do
     FactoryGirl.create(:user)
   end
   let(:dish_1) do
-    FactoryGirl.create(:dish)
+    FactoryGirl.create(:dish, creator: user)
   end
   let(:dish_2) do
-    FactoryGirl.create(:dish)
+    FactoryGirl.create(:dish, creator: user)
   end
   let(:dish_3) do
-    FactoryGirl.create(:dish)
+    FactoryGirl.create(:dish, creator: user)
   end
 
   scenario "user views a list of dishes on index page successfully" do
@@ -28,7 +28,7 @@ feature "user views dishes" do
 
   scenario "user sees show page after clicking on a dish" do
     visit root_path
-    click_button dish_1.name
+    click_link dish_1.name
 
     expect(page).to have_content dish_1.name
     expect(page).to have_content dish_1.description

@@ -1,20 +1,19 @@
 require 'rails_helper'
 
 RSpec.feature "user can create a new dish" do
-  let(:user) do
-    FactoryGirl.create(:user)
-  end
-
   scenario "user is not signed in" do
+
     visit root_path
-    click_button "Add a New Dish"
-    expect(page).to have_content "You are not signed in!"
+    click_link "Add a New Dish"
+    expect(page).to have_content "You need to sign in or sign up before continuing"
   end
 
   scenario "user is signed in and creates a dish successfully" do
+    user = FactoryGirl.create(:user)
+
     visit root_path
-    sign_in_as_user
-    click_button "Add a New Dish"
+    login_as(user, :scope => :user, :run_callbacks => false)
+    click_link "Add a New Dish"
     fill_in "Name", with: "Coffee"
     fill_in "Description", with: "Nectar of the gods"
 
@@ -25,9 +24,11 @@ RSpec.feature "user can create a new dish" do
   end
 
   scenario "user does not enter a name when submitting a dish" do
+    user = FactoryGirl.create(:user)
+
     visit root_path
-    sign_in_as_user
-    click_button "Add a New Dish"
+    login_as(user, :scope => :user, :run_callbacks => false)
+    click_link "Add a New Dish"
     fill_in "Description", with: "Tom loves this breakfast"
 
     expect(page).to have_content "Name can't be blank"
@@ -35,8 +36,10 @@ RSpec.feature "user can create a new dish" do
   end
 
   scenario "user does not enter a description when submitting a dish" do
+    user = FactoryGirl.create(:user)
+
     visit root_path
-    sign_in_as_user
+    login_as(user, :scope => :user, :run_callbacks => false)
     click_button "Add a New Dish"
     fill_in "Name", with: "Pancakes"
 

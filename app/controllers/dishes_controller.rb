@@ -1,5 +1,5 @@
 class DishesController < ApplicationController
-  before_action :authenticate_user, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @dishes = Dish.all
@@ -11,12 +11,11 @@ class DishesController < ApplicationController
 
   def new
     @dish = Dish.new
-    @creator = User.find(params[:creator_id])
   end
 
   def create
     @dish = Dish.new(dish_params)
-    @creator = User.find(params[:creator_id])
+    @creator = User.find(params[:dish][:creator_id])
     @dish.creator = @creator
     if @dish.save
       flash[:notice] = "Dish added successfully"
@@ -30,6 +29,6 @@ class DishesController < ApplicationController
   private
 
   def dish_params
-    params.require(:dish).permit(:name, :description)
+    params.require(:dish).permit(:name, :description, :creator_id)
   end
 end
