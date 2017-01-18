@@ -4,6 +4,8 @@
       "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/models/user.rb": [
         1,
         1,
+        1,
+        1,
         null,
         1,
         1,
@@ -70,6 +72,8 @@
       "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/models/dish.rb": [
         1,
         1,
+        1,
+        1,
         null,
         1,
         null
@@ -81,6 +85,15 @@
         0
       ],
       "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/controllers/reviews_controller.rb": [
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -100,8 +113,19 @@
         0,
         0,
         0
+      ],
+      "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/models/review.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ]
     },
-    "timestamp": 1484766751
+    "timestamp": 1484770141
   }
 }

@@ -7298,3 +7298,208 @@ Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 0.9ms)
   [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2017-01-18 15:09:00 -0500
+Processing by DishesController#index as HTML
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mDish Load (1.1ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  Rendered dishes/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 477ms (Views: 466.5ms | ActiveRecord: 2.5ms)
+Started GET "/dishes/new" for 127.0.0.1 at 2017-01-18 15:09:00 -0500
+Processing by DishesController#new as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-01-18 15:09:01 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 55ms (Views: 34.6ms | ActiveRecord: 8.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user1@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "User 1"], ["email", "user1@example.com"], ["encrypted_password", "$2a$04$FrnB5DVi1UX8MwuzFyVvKu.nsPQcYe/VkVyZF5kIemMlFcVlqMTK2"], ["created_at", 2017-01-18 20:09:01 UTC], ["updated_at", 2017-01-18 20:09:01 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-01-18 15:09:01 -0500
+Processing by DishesController#index as HTML
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  Rendered dishes/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.3ms)
+Started GET "/dishes/new" for 127.0.0.1 at 2017-01-18 15:09:01 -0500
+Processing by DishesController#new as HTML
+  Rendering dishes/new.html.erb within layouts/application
+  Rendered dishes/_form.html.erb (3.5ms)
+  Rendered dishes/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 25ms (Views: 11.1ms | ActiveRecord: 4.2ms)
+Started POST "/dishes" for 127.0.0.1 at 2017-01-18 15:09:01 -0500
+Processing by DishesController#create as HTML
+  Parameters: {"utf8"=>"✓", "dish"=>{"name"=>"Coffee", "description"=>"Nectar of the gods"}, "commit"=>"Add Dish"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "dishes" ("creator_id", "name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["creator_id", 1], ["name", "Coffee"], ["description", "Nectar of the gods"], ["created_at", 2017-01-18 20:09:01 UTC], ["updated_at", 2017-01-18 20:09:01 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/dishes/1
+Completed 302 Found in 14ms (ActiveRecord: 2.3ms)
+Started GET "/dishes/1" for 127.0.0.1 at 2017-01-18 15:09:01 -0500
+Processing by DishesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dishes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered dishes/show.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 18ms (Views: 11.1ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user2@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "User 2"], ["email", "user2@example.com"], ["encrypted_password", "$2a$04$ELdPs798GiXtDK2GuBIvauWaKhaY30Ii.99BqNmAg3Gj6Wd37beg6"], ["created_at", 2017-01-18 20:09:01 UTC], ["updated_at", 2017-01-18 20:09:01 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-01-18 15:09:01 -0500
+Processing by DishesController#index as HTML
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mDish Load (0.4ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  Rendered dishes/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 13ms (Views: 10.1ms | ActiveRecord: 0.4ms)
+Started GET "/dishes/new" for 127.0.0.1 at 2017-01-18 15:09:01 -0500
+Processing by DishesController#new as HTML
+  Rendering dishes/new.html.erb within layouts/application
+  Rendered dishes/_form.html.erb (1.6ms)
+  Rendered dishes/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+Started POST "/dishes" for 127.0.0.1 at 2017-01-18 15:09:01 -0500
+Processing by DishesController#create as HTML
+  Parameters: {"utf8"=>"✓", "dish"=>{"name"=>"", "description"=>"Tom loves this breakfast"}, "commit"=>"Add Dish"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering dishes/new.html.erb within layouts/application
+  Rendered dishes/_form.html.erb (4.1ms)
+  Rendered dishes/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 19ms (Views: 12.9ms | ActiveRecord: 1.3ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user3@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "User 3"], ["email", "user3@example.com"], ["encrypted_password", "$2a$04$JvvSj/.SJ06r6FEF4UII/Op3tT73JiTlkdrx3zV.HVISkjBN7c55u"], ["created_at", 2017-01-18 20:09:01 UTC], ["updated_at", 2017-01-18 20:09:01 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-01-18 15:09:01 -0500
+Processing by DishesController#index as HTML
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mDish Load (0.5ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  Rendered dishes/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.5ms)
+Started GET "/dishes/new" for 127.0.0.1 at 2017-01-18 15:09:01 -0500
+Processing by DishesController#new as HTML
+  Rendering dishes/new.html.erb within layouts/application
+  Rendered dishes/_form.html.erb (1.8ms)
+  Rendered dishes/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.0ms)
+Started POST "/dishes" for 127.0.0.1 at 2017-01-18 15:09:01 -0500
+Processing by DishesController#create as HTML
+  Parameters: {"utf8"=>"✓", "dish"=>{"name"=>"Pancakes", "description"=>""}, "commit"=>"Add Dish"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "dishes" ("creator_id", "name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["creator_id", 3], ["name", "Pancakes"], ["description", ""], ["created_at", 2017-01-18 20:09:01 UTC], ["updated_at", 2017-01-18 20:09:01 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/dishes/2
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms)
+Started GET "/dishes/2" for 127.0.0.1 at 2017-01-18 15:09:01 -0500
+Processing by DishesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDish Load (0.5ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering dishes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered dishes/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 12ms (Views: 7.6ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user4@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "User 4"], ["email", "user4@example.com"], ["encrypted_password", "$2a$04$NTsPxYicWU4zD0WHt6t3Ue95cd7ID5OOUbDewLItzGUy.OUwbpChm"], ["created_at", 2017-01-18 20:09:01 UTC], ["updated_at", 2017-01-18 20:09:01 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user5@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "User 5"], ["email", "user5@example.com"], ["encrypted_password", "$2a$04$MibZqP1DuBygJWSUFBpG8.gwSuGt8B2zfE5uSIMqfckJ6fvGKT8wG"], ["created_at", 2017-01-18 20:09:01 UTC], ["updated_at", 2017-01-18 20:09:01 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "dishes" ("creator_id", "name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["creator_id", 5], ["name", "Al's Pancake World fries 1"], ["description", "This is a test dish"], ["created_at", 2017-01-18 20:09:01 UTC], ["updated_at", 2017-01-18 20:09:01 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user6@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "User 6"], ["email", "user6@example.com"], ["encrypted_password", "$2a$04$z5GUkNM7IXAICCLZmsQP4eNepYQpyj/5ZyUUjX12uKUwaLtkqjJL2"], ["created_at", 2017-01-18 20:09:01 UTC], ["updated_at", 2017-01-18 20:09:01 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "dishes" ("creator_id", "name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["creator_id", 6], ["name", "Al's Pancake World fries 2"], ["description", "This is a test dish"], ["created_at", 2017-01-18 20:09:01 UTC], ["updated_at", 2017-01-18 20:09:01 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user7@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "User 7"], ["email", "user7@example.com"], ["encrypted_password", "$2a$04$Rf9/eIFO55Ojz2UY9QMEAed7kNixtKLZBJ6eNQmUO3r/Yite5OYWu"], ["created_at", 2017-01-18 20:09:01 UTC], ["updated_at", 2017-01-18 20:09:01 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "dishes" ("creator_id", "name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["creator_id", 7], ["name", "Al's Pancake World fries 3"], ["description", "This is a test dish"], ["created_at", 2017-01-18 20:09:01 UTC], ["updated_at", 2017-01-18 20:09:01 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/dishes" for 127.0.0.1 at 2017-01-18 15:09:01 -0500
+Processing by DishesController#index as HTML
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mDish Load (0.7ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  Rendered dishes/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 20ms (Views: 13.5ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user8@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "User 8"], ["email", "user8@example.com"], ["encrypted_password", "$2a$04$xZe9UQC2ge9nMw.VBmJ3OeHCxchOx13q3XR0mj0L6eWtGU3rSUG7G"], ["created_at", 2017-01-18 20:09:01 UTC], ["updated_at", 2017-01-18 20:09:01 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user9@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "User 9"], ["email", "user9@example.com"], ["encrypted_password", "$2a$04$9ac.30NuOBZgdJGpHYkqG.HTGeyKB6VnlqNi/w.w8IQjBXAzJzXQa"], ["created_at", 2017-01-18 20:09:01 UTC], ["updated_at", 2017-01-18 20:09:01 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "dishes" ("creator_id", "name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["creator_id", 9], ["name", "Al's Pancake World fries 4"], ["description", "This is a test dish"], ["created_at", 2017-01-18 20:09:01 UTC], ["updated_at", 2017-01-18 20:09:01 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user10@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "User 10"], ["email", "user10@example.com"], ["encrypted_password", "$2a$04$4QsxNfQboskC62PwUqE.z.iSCAZoBC8NqrmCItfe3q9zCURUNoYKm"], ["created_at", 2017-01-18 20:09:01 UTC], ["updated_at", 2017-01-18 20:09:01 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "dishes" ("creator_id", "name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["creator_id", 10], ["name", "Al's Pancake World fries 5"], ["description", "This is a test dish"], ["created_at", 2017-01-18 20:09:01 UTC], ["updated_at", 2017-01-18 20:09:01 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/dishes" for 127.0.0.1 at 2017-01-18 15:09:01 -0500
+Processing by DishesController#index as HTML
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  Rendered dishes/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 0.3ms)
+Started GET "/dishes/6" for 127.0.0.1 at 2017-01-18 15:09:01 -0500
+Processing by DishesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mDish Load (0.5ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering dishes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered dishes/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 18ms (Views: 13.4ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "another@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "name@com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "name.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m

@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-  has_many :dishes
+  has_many :created_dishes, class_name: :Dish
+  has_many :reviews
+  has_many :dishes, through: :reviews
 
   validates :username, presence: true
   validates :email, presence: true
