@@ -4,7 +4,7 @@ feature "user registers", %{
   As a user, I want to register so that I can create an account
 } do
 
-  xscenario "provide valid registration information" do
+  scenario "provide valid registration information" do
     visit new_user_registration_path
 
     fill_in "Email", with: "thomas12345@example.com"
