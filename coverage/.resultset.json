@@ -3,10 +3,11 @@
     "coverage": {
       "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/models/user.rb": [
         1,
-        null,
-        null,
+        1,
+        1,
         1,
         null,
+        1,
         null,
         null,
         null,
@@ -26,6 +27,14 @@
       "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/controllers/dishes_controller.rb": [
         1,
         1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/controllers/application_controller.rb": [
@@ -68,6 +77,6 @@
         0
       ]
     },
-    "timestamp": 1484755794
+    "timestamp": 1484756275
   }
 }
