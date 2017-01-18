@@ -1,22 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <title>Breakfast Club</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <%= stylesheet_link_tag 'application', media: 'all' %>
+      <%= stylesheet_link_tag 'welcome' if controller_name == 'homes' %>
     <%= csrf_meta_tags %>
   </head>
+<body>
+  <div class="container">
 
-  <body>
-    <% flash.each do |key, value| %>
-      <p><%= value %></p>
-    <% end %>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+  <%- flash.each do |key, value| -%>
+   <div class="flash text-center flash-<%= key %>">
+     <%= value %>
+   </div>
+  <%- end -%>
 
+  <% if controller_name != 'homes' %>
+  <% end %>
+   <div class="row">
+     <div class="columns">
+       <%= yield %>
+     </div>
+   </div>
+  </div>
+
+  <% unless @no_footer %>
+   <footer>
+     <!-- <img src="http://i.imgur.com/gOZIZR7.jpg"/> -->
+   </footer>
+  <% end %>
+
+  <%= javascript_include_tag 'application' %>
+  <%= yield :extra_footer %>
   </body>
 </html>
