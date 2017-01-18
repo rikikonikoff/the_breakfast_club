@@ -1,22 +1,12 @@
 {
   "RSpec": {
     "coverage": {
-<<<<<<< HEAD
       "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/models/user.rb": [
         1,
         null,
         null,
         1,
         null,
-=======
-      "/Users/Audrey/challenges/the_breakfast_club/app/models/user.rb": [
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
->>>>>>> 75a646f4b733c9cb280c073075fcd565e0ab63f1
         null,
         null,
         null,
@@ -24,7 +14,6 @@
         null,
         null
       ],
-<<<<<<< HEAD
       "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/models/application_record.rb": [
         1,
         1,
@@ -52,71 +41,33 @@
         null
       ],
       "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/channels/application_cable/channel.rb": [
-=======
-      "/Users/Audrey/challenges/the_breakfast_club/app/models/application_record.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/Audrey/challenges/the_breakfast_club/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/Audrey/challenges/the_breakfast_club/app/channels/application_cable/channel.rb": [
->>>>>>> 75a646f4b733c9cb280c073075fcd565e0ab63f1
         0,
         0,
         0,
         0
       ],
-<<<<<<< HEAD
       "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/channels/application_cable/connection.rb": [
         0,
-=======
-      "/Users/Audrey/challenges/the_breakfast_club/app/channels/application_cable/connection.rb": [
-        0,
         0,
         0,
         0
       ],
-      "/Users/Audrey/challenges/the_breakfast_club/app/controllers/application_controller.rb": [
->>>>>>> 75a646f4b733c9cb280c073075fcd565e0ab63f1
-        0,
-        0,
-        0
-      ],
-<<<<<<< HEAD
       "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/controllers/users_controller.rb": [
-=======
-      "/Users/Audrey/challenges/the_breakfast_club/app/controllers/users_controller.rb": [
->>>>>>> 75a646f4b733c9cb280c073075fcd565e0ab63f1
         0,
         0,
         0
       ],
-<<<<<<< HEAD
       "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/jobs/application_job.rb": [
         0,
         0
       ],
       "/Users/rikikonikoff/Documents/Challenges/the_breakfast_club/app/mailers/application_mailer.rb": [
-=======
-      "/Users/Audrey/challenges/the_breakfast_club/app/jobs/application_job.rb": [
-        0,
-        0
-      ],
-      "/Users/Audrey/challenges/the_breakfast_club/app/mailers/application_mailer.rb": [
->>>>>>> 75a646f4b733c9cb280c073075fcd565e0ab63f1
         0,
         0,
         0,
         0
       ]
     },
-<<<<<<< HEAD
     "timestamp": 1484755794
-=======
-    "timestamp": 1484754423
->>>>>>> 75a646f4b733c9cb280c073075fcd565e0ab63f1
   }
 }
