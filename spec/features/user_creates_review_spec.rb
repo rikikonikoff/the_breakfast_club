@@ -1,52 +1,58 @@
 require 'rails_helper'
 
-RSpec.feature "user can create a new dish" do
+RSpec.feature "user can create a new review" do
   scenario "user is not signed in" do
+    user = FactoryGirl.create(:user)
+    dish = FactoryGirl.create(:dish)
 
-    visit root_path
-    click_link "Add a New Dish"
+    logout(:user)
+    visit dish_path(dish)
+    click_link "Review this Dish"
     expect(page).to have_content "You need to sign in or sign up before continuing"
   end
 
-  scenario "user is signed in and creates a dish successfully" do
+  scenario "user is signed in and creates a review successfully" do
     user = FactoryGirl.create(:user)
+    dish = FactoryGirl.create(:dish)
 
-    visit root_path
+    visit dish_path(dish)
     login_as(user, :scope => :user, :run_callbacks => false)
-    click_link "Add a New Dish"
-    fill_in "Name", with: "Coffee"
-    fill_in "Description", with: "Nectar of the gods"
-    click_button "Add Dish"
+    click_link "Review this Dish"
+    fill_in "Rating", with: "4"
+    fill_in "comments on your rating", with: "This place is pretty rad"
+    click_button "Review #{dish.name}"
 
-    expect(page).to have_content "Dish added successfully"
-    expect(page).to have_content "Coffee"
-    expect(page).to have_content "Nectar of the gods"
+    expect(page).to have_content "Review added successfully"
+    expect(page).to have_content "4"
+    expect(page).to have_content "This place is pretty rad"
     expect(page).to have_content user.username
   end
 
-  scenario "user does not enter a name when submitting a dish" do
+  scenario "user does not enter a rating when submitting a review" do
     user = FactoryGirl.create(:user)
+    dish = FactoryGirl.create(:dish)
 
-    visit root_path
+    visit dish_path(dish)
     login_as(user, :scope => :user, :run_callbacks => false)
-    click_link "Add a New Dish"
-    fill_in "Description", with: "Tom loves this breakfast"
-    click_button "Add Dish"
+    click_link "Review this Dish"
+    fill_in "comments on your rating", with: "I love this for breakfast!"
+    click_button "Review #{dish.name}"
 
-    expect(page).to have_content "Name can't be blank"
+    expect(page).to have_content "Rating can't be blank"
   end
 
-  scenario "user does not enter a description when submitting a dish" do
+  scenario "user does not enter a body when submitting a review" do
     user = FactoryGirl.create(:user)
+    dish = FactoryGirl.create(:dish)
 
-    visit root_path
+    visit dish_path(dish)
     login_as(user, :scope => :user, :run_callbacks => false)
-    click_link "Add a New Dish"
-    fill_in "Name", with: "Pancakes"
-    click_button "Add Dish"
+    click_link "Review this Dish"
+    fill_in "Rating", with: "5"
+    click_button "Review #{dish.name}"
 
-    expect(page).to have_content "Dish added successfully"
-    expect(page).to have_content "Pancakes"
+    expect(page).to have_content "Review added successfully"
+    expect(page).to have_content "5"
     expect(page).to have_content user.username
   end
 end
