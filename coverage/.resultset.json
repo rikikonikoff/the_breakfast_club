@@ -24,6 +24,26 @@
         1,
         null
       ],
+      "/Users/Audrey/challenges/the_breakfast_club/app/controllers/registrations_controller.rb": [
+        1,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/Audrey/challenges/the_breakfast_club/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null
+      ],
       "/Users/Audrey/challenges/the_breakfast_club/app/channels/application_cable/channel.rb": [
         0,
         0,
@@ -36,12 +56,11 @@
         0,
         0
       ],
-      "/Users/Audrey/challenges/the_breakfast_club/app/controllers/application_controller.rb": [
-        0,
-        0,
-        0
-      ],
       "/Users/Audrey/challenges/the_breakfast_club/app/controllers/users_controller.rb": [
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0
@@ -57,6 +76,6 @@
         0
       ]
     },
-    "timestamp": 1484754423
+    "timestamp": 1484763800
   }
 }
