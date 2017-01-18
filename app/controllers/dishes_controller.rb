@@ -15,7 +15,7 @@ class DishesController < ApplicationController
 
   def create
     @dish = Dish.new(dish_params)
-    @creator = User.find(params[:dish][:creator_id])
+    @creator = current_user
     @dish.creator = @creator
     if @dish.save
       flash[:notice] = "Dish added successfully"
