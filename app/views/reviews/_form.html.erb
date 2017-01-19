@@ -1,0 +1,13 @@
+<%= form_for [@dish, @review] do |f| %>
+  <li>
+    <%= f.label :rating %>
+    <%= f.text_field :rating %>
+  </li>
+  <li>
+    <%= f.label :body, "comments on your rating" %>
+    <%= f.text_field :body %>
+  </li>
+  <li>
+    <%= f.submit "Review #{@dish.name}" %>
+  </li>
+<% end %>
