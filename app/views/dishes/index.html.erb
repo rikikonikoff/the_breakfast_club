@@ -25,6 +25,7 @@
 </nav>
 
 <h1>Breakfast Dishes</h1>
+<%= image_tag(current_user.avatar, class: "avatar") if user_signed_in? %>
 
 <ul style="list-style: none;">
   <% @dishes.each do |dish| %>

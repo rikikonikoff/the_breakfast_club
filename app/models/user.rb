@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  attr_accessor :login, :avatar, :avatar_cache, :remove_avatar
+
   has_many :created_dishes, class_name: :Dish
   has_many :created_reviews, class_name: :Review
   has_many :dishes, through: :reviews
@@ -15,4 +17,6 @@ class User < ApplicationRecord
          :rememberable,
          :trackable,
          :validatable
+
+  mount_uploader :avatar, AvatarUploader
 end
