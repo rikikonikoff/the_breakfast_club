@@ -6,6 +6,7 @@ class DishesController < ApplicationController
   end
 
   def show
+    @id = params[:id]
     @dish = Dish.find(params[:id])
     @reviews = @dish.reviews
   end

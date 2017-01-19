@@ -9,4 +9,10 @@ root "homes#index"
       resources :votes, only: [:new, :create, :edit, :update, :destroy]
     end
   end
+
+  namespace :api do
+    namespace :v1 do
+      resources :dishes
+    end
+  end
 end

@@ -25,8 +25,10 @@ class Review extends Component{
     return(
       <li>
         {this.props.reviewer}: {this.props.rating} {this.props.body}
-        Created at: {this.props.created_at.strftime("%B %d %Y")}
+        Created at: {this.props.created_at}
       </li>
     );
   }
 }
+
+export default Review;
