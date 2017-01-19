@@ -55,7 +55,9 @@ GEM
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
     coderay (1.1.1)
+    coffee-script-source (1.12.2)
     concurrent-ruby (1.0.4)
+    connection_pool (2.2.1)
     coveralls (0.8.18)
       json (>= 1.8, < 3)
       simplecov (~> 0.12.0)
@@ -158,6 +160,13 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
+    react-rails (1.10.0)
+      babel-transpiler (>= 0.7.0)
+      coffee-script-source (~> 1.8)
+      connection_pool
+      execjs
+      railties (>= 3.2)
+      tilt
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
     rspec-core (3.5.4)
@@ -246,6 +255,7 @@ DEPENDENCIES
   puma
   rails
   rails_12factor
+  react-rails
   rspec-rails
   sass-rails
   shoulda-matchers

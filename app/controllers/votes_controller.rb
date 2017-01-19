@@ -10,6 +10,20 @@ class VotesController < ApplicationController
     @review = Review.find(params[:review_id])
     @dish = Dish.find(params[:dish_id])
     @user = current_user
+
+    if @vote.save
+      if @vote.vote_value == 1
+        @review.upvote_count += 1
+      elsif @vote.vote_value == -1
+        @review.downvote_count += 1
+      end
+
+      @review.net_votes = @vote.upvote_count - @vote.downvote_count
+      redirect_to @dish
+    else
+      flash[:notice] = @vote.errors.full_messages.to_sentence
+      render :new
+    end
   end
 
   def edit
@@ -24,6 +38,32 @@ class VotesController < ApplicationController
     @review = Review.find(params[:review_id])
     @dish = Dish.find(params[:dish_id])
     @user = current_user
+
+    if @user == @vote.user
+      if @vote.vote_value == 1
+        @review.upvote_count -= 1
+      elsif @vote.vote_value == -1
+        @review.downvote_count -=1
+      end
+
+      @vote.vote_value = 0
+
+      if @vote.save
+        if @vote.vote_value == 1
+          @review.upvote_count += 1
+        elsif @vote.vote_value == -1
+          @review.downvote_count += 1
+        end
+
+        @review.net_votes = @vote.upvote_count - @vote.downvote_count
+        redirect_to @dish
+      else
+        flash[:notice] = @vote.errors.full_messages.to_sentence
+        render :edit
+      end
+    else
+      flash[:notice] = "You can't change someone else's vote"
+    end
   end
 
   def destroy
@@ -31,6 +71,20 @@ class VotesController < ApplicationController
     @review = Review.find(params[:review_id])
     @dish = Dish.find(params[:dish_id])
     @user = current_user
+    
+    if @user == @vote.user
+      if @vote.vote_value == 1
+        @review.upvote_count -= 1
+      elsif @vote.vote_value == -1
+        @review.downvote_count -=1
+      end
+
+      @vote.destroy
+      @review.net_votes = @vote.upvote_count - @vote.downvote_count
+      redirect_to @dish
+    else
+      flash[:notice] = "You can't change someone else's vote"
+    end
   end
 
   private

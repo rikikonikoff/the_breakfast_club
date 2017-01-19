@@ -9,6 +9,7 @@ gem 'uglifier'
 gem 'jquery-rails'
 gem 'devise'
 gem 'omniauth'
+gem 'react-rails'
 group :development do
   gem 'listen'
   gem 'spring'

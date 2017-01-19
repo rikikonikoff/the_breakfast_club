@@ -5,16 +5,4 @@
 
 <%= link_to "Review this Dish", new_dish_review_path(@dish) %>
 
-<p>Reviews:</p>
-<ul style="list-style: none;">
-  <% @reviews.each do |review| %>
-    <li>
-      <%= review.user.username %>: <%= review.rating %> <%= review.body %>
-      <br>
-      Created at:<%= review.created_at.strftime("%B %d %Y") %>
-      <br>
-      <button>Like</button>
-      <button>Dislike</button>
-    </li>
-  <% end %>
-</ul>
+<%= react_component("Dish", data: @dish) %>

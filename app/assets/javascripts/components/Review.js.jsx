@@ -13,17 +13,22 @@ class Review extends Component{
 
   handleUpVote(event) {
     event.preventDefault();
-    this.setState({  })
+    this.setState({ likesCount: this.state.likesCount + 1 });
   }
 
   handleDownVote(event) {
     event.preventDefault();
-    this.setState({  })
+    this.setState({ dislikesCount: this.state.dislikesCount + 1 });
   }
 
   render() {
     return(
-
-    )
+      <li>
+        {this.props.reviewer}: {this.props.rating} {this.props.body}
+        Created at: {this.props.created_at.strftime("%B %d %Y")}
+      </li>
+    );
   }
 }
+
+export default Review;
