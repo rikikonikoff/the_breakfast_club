@@ -12,3 +12,7 @@
 /.env
 /coverage/.resultset.json
 /coverage/.last_run.json
+
+/node_modules
+/app/assets/javascripts/bundle.js
+/react/coverage

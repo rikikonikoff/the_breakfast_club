@@ -34,6 +34,7 @@
     "redux-devtools": "^3.2.0"
   },
   "dependencies": {
+    "babel": "^5.8.23",
     "babel-core": "^6.8.0",
     "babel-loader": "^6.2.4",
     "babel-polyfill": "^6.7.4",

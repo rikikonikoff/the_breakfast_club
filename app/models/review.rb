@@ -6,4 +6,7 @@ class Review < ApplicationRecord
   validates :body, length: { maximum: 140 }, allow_blank: true
   validates :user_id, presence: true
   validates :dish_id, presence: true
+  validates :upvote_count, numericality: { only_integer: true }, presence: true
+  validates :downvote_count, numericality: { only_integer: true }, presence: true
+  validates :net_votes, numericality: { only_integer: true }, presence: true
 end

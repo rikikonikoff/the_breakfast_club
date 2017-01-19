@@ -1,7 +1,7 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App.js';
+import Dish from '../../app/assets/javascripts/components/Dish.js';
 
 $(function() {
   ReactDOM.render(
