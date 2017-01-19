@@ -20,7 +20,7 @@ feature "user signs out", %{
   end
 
   scenario "unauthenticated user attempts to sign out" do
-    visit "/"
+    visit dishes_path
     expect(page).to_not have_content("Sign Out")
   end
 end

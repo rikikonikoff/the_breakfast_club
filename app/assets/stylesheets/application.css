@@ -15,3 +15,24 @@
  *= require foundation_and_overrides
 
  */
+
+/*Home Page*/
+
+#join-link a:hover {
+  color: white;
+}
+
+#join-link a:hover {
+  color: orange;
+}
+
+.left a {
+  color: white;
+  display: block;
+  font-weight: lighter;
+  padding-top: 9px;
+}
+
+.left a:hover {
+  color: orange;
+}

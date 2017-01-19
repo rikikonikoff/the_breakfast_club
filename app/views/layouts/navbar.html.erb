@@ -23,13 +23,3 @@
    <% end %>
  </section>
 </nav>
-
-<h1>Breakfast Dishes</h1>
-
-<ul style="list-style: none;">
-  <% @dishes.each do |dish| %>
-    <li><%= link_to dish.name, dish_path(dish) %></li>
-  <% end %>
-</ul>
-
-<%= link_to "Add a New Dish", new_dish_path %>
