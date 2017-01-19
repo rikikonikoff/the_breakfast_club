@@ -3,13 +3,12 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*
-log/test.log
-log/development.log
+/log/test.log
+/log/development.log
 !/log/.keep
 /tmp
 /coverage
 .env
 /.env
-/coverage/*
-coverage/.resultset.json
-coverage/.last_run.json
+/coverage/.resultset.json
+/coverage/.last_run.json
