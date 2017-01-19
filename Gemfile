@@ -9,6 +9,9 @@ gem 'uglifier'
 gem 'jquery-rails'
 gem 'devise'
 gem 'omniauth'
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick', '~> 4.3'
+
 group :development do
   gem 'listen'
   gem 'spring'
