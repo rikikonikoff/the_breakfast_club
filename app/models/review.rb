@@ -1,6 +1,8 @@
 class Review < ApplicationRecord
-  belongs_to :user
+  belongs_to :reviewer, class_name: :User
   belongs_to :dish
+  has_many :votes
+  has_many :users, through: :votes
 
   validates :rating, presence: true, numericality: { only_integer: true }, inclusion: { in: 1..5 }
   validates :body, length: { maximum: 140 }, allow_blank: true
