@@ -1,23 +1,36 @@
 import React, { Component } from 'react';
 import Dish from "./Dish";
 
-
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      dishes: []
+      dishes: [],
+      selectedDishId: null
     };
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  componentWillMount() {
-    $.ajax({
-      url: "/api/v1/dishes",
-      contentType: "application/json"
-    })
-    .done(data => {
-      this.setState({ dishes: data[0] });
-    });
+  componentDidMount() {
+    fetch("/api/v1/dishes")
+      .then(response => {
+        if(response.ok) {
+          return response.json();
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+              error = new Error(errorMessage);
+          throw(error);
+        }
+      })
+      .then(data => {
+        this.setState({ dishes: data });
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+
+  handleClick(event) {
+    event.preventDefault();
+    this.setState({ selectedDishId: event.target.id });
   }
 
   render(){
@@ -25,18 +38,25 @@ class App extends Component {
       return(
         <Dish
         key = {dish.id}
-        creator = {dish.creator}
+        id = {dish.id}
+        creator_id = {dish.creator_id}
         name = {dish.name}
         description = {dish.description}
-        reviews = {dish.reviews}
+        handleClick = {this.handleClick}
         />
       );
     });
+
+    // let display;
+    // if(this.sate.selectedDishId === null) {
+    //   display = dishes;
+    // } else {
+    //   display = dishes.find(dish.id = this.state.selectedDishId);
+    // }
+
     return(
       <div>
-        <ul style="list-style: none;">
-          { dishes }
-        </ul>
+        {dishes}
       </div>
     );
   }

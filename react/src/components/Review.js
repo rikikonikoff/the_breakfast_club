@@ -23,10 +23,10 @@ class Review extends Component{
 
   render() {
     return(
-      <li>
-        {this.props.reviewer}: {this.props.rating} {this.props.body}
+      <p>
+        {this.props.reviewer_id}: {this.props.rating} {this.props.body}
         Created at: {this.props.created_at}
-      </li>
+      </p>
     );
   }
 }
