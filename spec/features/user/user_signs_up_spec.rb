@@ -28,7 +28,7 @@ feature "user registers", %{
     expect(page).to_not have_content("Sign Out")
   end
 
-  scenario 'user uploads profile photo' do
+  xscenario 'user uploads profile photo' do
     visit new_user_registration_path
 
     fill_in "Email", with: "thomas12345@example.com"

@@ -2,8 +2,10 @@ class User < ApplicationRecord
   attr_accessor :login, :avatar, :avatar_cache, :remove_avatar
 
   has_many :created_dishes, class_name: :Dish
-  has_many :reviews
+  has_many :created_reviews, class_name: :Review
   has_many :dishes, through: :reviews
+  has_many :votes
+  has_many :reviews, through: :votes
 
   validates :username, presence: true
   validates :email, presence: true
