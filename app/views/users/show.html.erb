@@ -1,3 +1,5 @@
 <div>
   <%= @user.username %>
+  <%= button_to "Destroy my account!", registration_path(@user), method: :delete %>
+
 </div>
