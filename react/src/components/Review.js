@@ -4,11 +4,32 @@ class Review extends Component{
   constructor(props) {
     super(props);
     this.state = {
+      reviewer: "",
       likesCount: 0,
       dislikesCount: 0
     };
     this.handleUpVote = this.handleUpVote.bind(this);
     this.handleDownVote = this.handleDownVote.bind(this);
+  }
+
+  componentDidMount() {
+    fetch(`/api/v1/dishes/${this.props.dish_id}/reviews/${this.props.id}`)
+      .then(response => {
+        if(response.ok) {
+          return response.json();
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+              error = new Error(errorMessage);
+          throw(error);
+        }
+      })
+      .then(data => {
+        return data.username;
+      })
+      .then(username => {
+        this.setState({ reviewer: username });
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   handleUpVote(event) {
@@ -21,12 +42,16 @@ class Review extends Component{
     this.setState({  });
   }
 
+
   render() {
+
+
     return(
-      <p>
-        {this.props.reviewer_id}: {this.props.rating} {this.props.body}
-        Created at: {this.props.created_at}
-      </p>
+      <div>
+        <p>
+          Rating: {this.props.rating} ({this.state.reviewer}) {this.props.body}
+        </p>
+      </div>
     );
   }
 }

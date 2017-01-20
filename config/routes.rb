@@ -12,7 +12,10 @@ root "homes#index"
 
   namespace :api do
     namespace :v1 do
-      resources :dishes
+      resources :dishes do
+        resources :users
+        resources :reviews
+      end
     end
   end
 end

@@ -1,38 +1,36 @@
-<nav class="top-bar" data-topbar role="navigation">
- <ul class="title-area">
-   <li class="name">
-     <!-- <h1><a href="/animals">Foster Network</a></h1> -->
-   </li>
-   <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
- </ul>
-
- <section class="top-bar-section">
-   <ul class="right">
-     <%- if current_user -%>
-       <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-     <%- else -%>
-       <%= link_to 'Sign Up', new_user_registration_path %>
-       <%= link_to 'Sign In', new_user_session_path %>
-     <%- end -%>
+<div id="top-bar">
+  <nav class="top-bar" data-topbar role="navigation">
+   <ul class="title-area">
+     <li class="name">
+       <!-- <h1><a href="/animals">Foster Network</a></h1> -->
+     </li>
+     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
    </ul>
 
-   <% if current_user %>
-     <ul class="left">
-       <li><%= link_to current_user.email, user_path(current_user) %></li>
+   <section class="top-bar-section">
+     <ul class="right">
+       <%- if current_user -%>
+         <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+       <%- else -%>
+         <%= link_to 'Sign Up', new_user_registration_path %>
+         <%= link_to 'Sign In', new_user_session_path %>
+       <%- end -%>
      </ul>
-   <% end %>
- </section>
-</nav>
 
-<h1>Breakfast Dishes</h1>
-<%= image_tag(current_user.avatar, class: "avatar") if user_signed_in? %>
-
-<ul style="list-style: none;">
-  <% @dishes.each do |dish| %>
-    <li><%= link_to dish.name, dish_path(dish) %></li>
-  <% end %>
-</ul>
+     <% if current_user %>
+       <ul class="left">
+         <li>
+           <%= link_to current_user.email, user_path(current_user) %>
+           <%= image_tag(current_user.avatar, class: "avatar") if user_signed_in? %>
+         </li>
+       </ul>
+     <% end %>
+   </section>
+  </nav>
+</div>
 
 <div id="dishes"></div>
 
-<%= link_to "Add a New Dish", new_dish_path %>
+<div>
+  <%= link_to "Add a New Dish", new_dish_path %>
+</div>

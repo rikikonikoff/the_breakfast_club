@@ -4,9 +4,3 @@
 <p>Created by: <%= @dish.creator.username %></p>
 
 <%= link_to "Review this Dish", new_dish_review_path(@dish) %>
-
-<ul style="list-style: none,">
-  <% @reviews.each do |review| %>
-    <li><%= review.reviewer.username %> @ <%= review.created_at %>: <%= review.rating %> <%= review.body %></li>
-  <% end %>
-</ul>

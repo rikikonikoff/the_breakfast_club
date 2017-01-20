@@ -6,7 +6,7 @@ class App extends Component {
     super(props);
     this.state = {
       dishes: [],
-      selectedDishId: null
+      selectedDishId: null,
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -28,13 +28,19 @@ class App extends Component {
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
-  handleClick(event) {
-    event.preventDefault();
-    this.setState({ selectedDishId: event.target.id });
+  handleClick(id) {
+    if (id === this.state.selectedDishId) {
+      this.setState({ selectedDishId: null });
+    } else {
+      this.setState({ selectedDishId: id });
+    }
   }
 
   render(){
     let dishes = this.state.dishes.map(dish => {
+      let onClick = () => {
+        this.handleClick(dish.id);
+      };
       return(
         <Dish
         key = {dish.id}
@@ -42,7 +48,8 @@ class App extends Component {
         creator_id = {dish.creator_id}
         name = {dish.name}
         description = {dish.description}
-        handleClick = {this.handleClick}
+        handleClick = {onClick}
+        clickedState = {this.state.selectedDishId}
         />
       );
     });
