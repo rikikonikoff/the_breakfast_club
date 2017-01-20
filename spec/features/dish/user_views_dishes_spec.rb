@@ -1,5 +1,4 @@
 require 'rails_helper'
-Capybara.javascript_driver = :webkit
 
 feature "user views dishes" do
   xscenario "user sees a list of dishes on the index page" do
