@@ -1,10 +1,4 @@
 <nav class="top-bar" data-topbar role="navigation">
- <ul class="title-area">
-   <li class="name">
-     <!-- <h1><a href="/animals">Foster Network</a></h1> -->
-   </li>
-   <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
- </ul>
 
  <section class="top-bar-section">
    <ul class="right">
@@ -18,7 +12,7 @@
 
    <% if current_user %>
      <ul class="left">
-       <li><%= link_to current_user.email, user_path(current_user) %></li>
+       <%= link_to current_user.email, user_path(current_user) %>
      </ul>
    <% end %>
  </section>
