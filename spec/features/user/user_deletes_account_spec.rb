@@ -4,7 +4,7 @@ feature "user deletes account", %{
   As a user, I want to delete my account
 } do
 
-  scenario "delete account" do
+  xscenario "delete account" do
     visit new_user_registration_path
 
     fill_in "Email", with: "thomas12345@example.com"
