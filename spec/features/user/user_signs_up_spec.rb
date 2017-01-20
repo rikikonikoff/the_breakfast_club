@@ -27,4 +27,18 @@ feature "user registers", %{
     expect(page).to have_content("can't be blank")
     expect(page).to_not have_content("Sign Out")
   end
+
+  scenario 'user uploads profile photo' do
+    visit new_user_registration_path
+
+    fill_in "Email", with: "thomas12345@example.com"
+    fill_in "user_password", with: "password12345"
+    fill_in "user_password_confirmation", with: "password12345"
+    fill_in "Username", with: "Thomas12345"
+    attach_file "Avatar", "#{Rails.root}/spec/fixtures/myfiles/pizza_party.png"
+
+    click_button "Sign up"
+
+    expect(page).to have_css("img[src*='pizza_party.png']")
+  end
 end

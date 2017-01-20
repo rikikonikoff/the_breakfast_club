@@ -1,4 +1,9 @@
-body {
+body#other {
+  background-color: red;
+  text-align: center;
+}
+
+body#home {
   background: url('http://imgur.com/keA9ohZ.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -9,14 +14,15 @@ body {
 .title h1 {
   margin-top: 30px;
   text-align: right;
-  font-size: 65px;
   color: white;
   font-weight: bolder;
 }
 
 a {
   color: white;
+  text-align: right;
   position: relative;
-  top: 400px;
-  left: 560px;
+  left: 45%;
+  bottom: -400px;
+
 }
