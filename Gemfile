@@ -20,6 +20,7 @@ end
 
 group :development, :test do
   gem 'capybara'
+  # gem 'capybara-webkit', '~>1.12.0'
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'pry-rails'

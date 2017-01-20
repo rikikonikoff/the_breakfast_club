@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature "user views reviews for a given dish" do
-  scenario "user sees a list of reviews on the dish's show page" do
+  xscenario "user sees a list of reviews on the dish's show page" do
     user = FactoryGirl.create(:user)
     dish_1 = FactoryGirl.create(:dish)
     dish_2 = FactoryGirl.create(:dish)
@@ -17,7 +17,7 @@ feature "user views reviews for a given dish" do
     expect(page).to_not have_content review_2.rating
   end
 
-  scenario "user can upvote or downvote a review" do
+  xscenario "user can upvote or downvote a review" do
     review = FactoryGirl.create(:review)
 
     visit dish_path(review.dish)

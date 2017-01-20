@@ -54,13 +54,6 @@ class App extends Component {
       );
     });
 
-    // let display;
-    // if(this.sate.selectedDishId === null) {
-    //   display = dishes;
-    // } else {
-    //   display = dishes.find(dish.id = this.state.selectedDishId);
-    // }
-
     return(
       <div>
         {dishes}
