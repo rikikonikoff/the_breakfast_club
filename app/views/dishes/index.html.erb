@@ -1,10 +1,5 @@
-<h1>Breakfast Dishes</h1>
-<%= image_tag(current_user.avatar, class: "avatar") if user_signed_in? %>
+<div id="dishes"></div>
 
-<ul style="list-style: none;">
-  <% @dishes.each do |dish| %>
-    <li><%= link_to dish.name, dish_path(dish) %></li>
-  <% end %>
-</ul>
-
-<%= link_to "Add a New Dish", new_dish_path %>
+<div>
+  <%= link_to "Add a New Dish", new_dish_path %>
+</div>

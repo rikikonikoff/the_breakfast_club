@@ -1,3 +1,6 @@
+var path = require('path');
+var webpack = require('webpack');
+
 var config = {
   entry: {
     path: './react/src/main.js',
@@ -16,7 +19,7 @@ var config = {
     ]
   },
   devtool: 'eval-source-map'
-}
+};
 
 if (process.env.NODE_ENV === 'production') {
   delete config.devtool;

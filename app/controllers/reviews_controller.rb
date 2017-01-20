@@ -21,8 +21,8 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:rating, :body).merge(
+    params.require(:review).permit(:rating, :body, :upvote_count, :downvote_count, :net_votes, :votes).merge(
       dish: Dish.find(params[:dish_id]),
-      user: User.find(current_user.id))
+      reviewer: User.find(current_user.id))
   end
 end

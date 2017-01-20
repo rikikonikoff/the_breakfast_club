@@ -3,11 +3,20 @@ class DishesController < ApplicationController
 
   def index
     @dishes = Dish.all
+    respond_to do |format|
+      format.html
+      format.json { render json: @dishes }
+    end
   end
 
   def show
+    @id = params[:id]
     @dish = Dish.find(params[:id])
     @reviews = @dish.reviews
+    respond_to do |format|
+      format.html
+      format.json { render json: [@dish, @reviews] }
+    end
   end
 
   def new
