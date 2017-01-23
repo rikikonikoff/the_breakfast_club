@@ -12665,3 +12665,82 @@ Processing by RegistrationsController#edit as
 Completed 200 OK in 135ms (Views: 90.5ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/" for ::1 at 2017-01-23 14:52:03 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 1309ms (Views: 1302.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dishes" for ::1 at 2017-01-23 14:52:06 -0500
+Processing by DishesController#index as HTML
+  Rendering dishes/index.html.erb within layouts/application
+  Rendered dishes/_search.html.erb (1.1ms)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "dishes"[0m
+  [1m[36mDish Load (0.5ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  Rendered dishes/index.html.erb within layouts/application (21.6ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (25.2ms)
+Completed 200 OK in 84ms (Views: 57.9ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/dishes/1" for ::1 at 2017-01-23 14:52:12 -0500
+Processing by DishesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDish Load (0.4ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dishes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered dishes/show.html.erb within layouts/application (11.1ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 3.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for nil:NilClass):
+    1: <h1><%= @dish.name %></h1>
+    2: 
+    3: <p>Description: <%= @dish.description %></p>
+    4: <p>Created by: <%= @dish.creator.username %></p>
+    5: 
+    6: <ul style="list-style: none;">
+    7:   <% @reviews.each do |review| %>
+  
+app/views/dishes/show.html.erb:4:in `_app_views_dishes_show_html_erb__213870024670929364_70138687595840'
+  Rendering /Users/Audrey/.gem/ruby/2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Audrey/.gem/ruby/2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Audrey/.gem/ruby/2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.4ms)
+  Rendering /Users/Audrey/.gem/ruby/2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Audrey/.gem/ruby/2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.3ms)
+  Rendering /Users/Audrey/.gem/ruby/2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Audrey/.gem/ruby/2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /Users/Audrey/.gem/ruby/2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (72.7ms)
+Started GET "/dishes/new" for ::1 at 2017-01-23 14:52:27 -0500
+Processing by DishesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering dishes/new.html.erb within layouts/application
+  Rendered dishes/_form.html.erb (26.0ms)
+  Rendered dishes/new.html.erb within layouts/application (28.1ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+Completed 200 OK in 59ms (Views: 53.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_out" for ::1 at 2017-01-23 14:52:30 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/dishes
+Completed 302 Found in 12ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/dishes" for ::1 at 2017-01-23 14:52:30 -0500
+Processing by DishesController#index as HTML
+  Rendering dishes/index.html.erb within layouts/application
+  Rendered dishes/_search.html.erb (0.7ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "dishes"[0m
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  Rendered dishes/index.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_navbar.html.erb (5.7ms)
+Completed 200 OK in 48ms (Views: 45.7ms | ActiveRecord: 0.8ms)
+
+

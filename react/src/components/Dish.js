@@ -25,22 +25,7 @@ componentDidMount() {
       this.setState({ reviews: data });
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
-
-//     fetch("/api/v1/users")
-//       .then(response => {
-//         if(response.ok) {
-//           return response.json();
-//         } else {
-//           let errorMessage = `${response.status} (${response.statusText})`,
-//               error = new Error(errorMessage);
-//           throw(error);
-//         }
-//       })
-//       .then(data => {
-//         this.setState({ users: data });
-//       })
-//       .catch(error => console.error(`Error in fetch: ${error.message}`));
-  }
+}
 
 render() {
   let reviews = this.state.reviews.map(review => {

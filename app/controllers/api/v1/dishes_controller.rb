@@ -1,6 +1,10 @@
 class Api::V1::DishesController < ApplicationController
   def index
-    render json: Dish.all
+    if params[:search]
+      render json: Dish.search(params[:search])
+    else
+      render json: Dish.all
+    end
   end
 
   def show
