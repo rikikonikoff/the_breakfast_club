@@ -1,3 +1,4 @@
+<div>
   <ul>
     <% @dishes.each do |dish| %>
       <%= link_to dish.name, dish_path(dish) %>
@@ -7,3 +8,4 @@
   <div>
     <%= link_to "Add a New Dish", new_dish_path %>
   </div>
+</div>

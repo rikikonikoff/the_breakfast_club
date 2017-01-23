@@ -30,9 +30,10 @@ feature "user edits account", %{
     user = User.last
 
     fill_in "Email", with: "thomas54321@example.com"
+    fill_in "current_password", with: "password12345"
 
     click_button "Update"
 
-    expect(page).to have_content("thomas54321")
+    expect(page).to have_content("Your account has been updated successfully.")
   end
 end
