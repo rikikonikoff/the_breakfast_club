@@ -7,21 +7,12 @@ class DishesController < ApplicationController
     else
       @dishes = Dish.all
     end
-
-    respond_to do |format|
-      format.html
-      format.json { render json: @dishes }
-    end
   end
 
   def show
     @id = params[:id]
     @dish = Dish.find(params[:id])
     @reviews = @dish.reviews
-    respond_to do |format|
-      format.html
-      format.json { render json: [@dish, @reviews] }
-    end
   end
 
   def new
@@ -44,6 +35,7 @@ class DishesController < ApplicationController
   private
 
   def dish_params
-    params.require(:dish).permit(:name, :description, :creator_id)
+    params.require(:dish).permit(:name, :description, :creator_id).merge(
+      creator: current_user)
   end
 end
