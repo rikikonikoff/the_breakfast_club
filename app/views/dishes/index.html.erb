@@ -2,6 +2,10 @@
   <%= render "search" %>
 </div>
 
+<% if @dishes.empty? %>
+  <h4>There are no dishes containing the term <%= params[:search] %>.</h4>
+<% end %>
+
 <div id="dishes"></div>
 
 <div>

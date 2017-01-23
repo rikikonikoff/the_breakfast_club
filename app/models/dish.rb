@@ -6,6 +6,7 @@ class Dish < ApplicationRecord
   validates :name, presence: true
 
   def self.search(query)
-    where("name LIKE ?", "%#{query}%")
+    where("name ILIKE ?", "%#{query}%")
+    where("description ILIKE ?", "%#{query}%")
   end
 end
