@@ -1,6 +1,15 @@
 require 'rails_helper'
 
-feature "user views dishes" do
+# Acceptance Criteria:
+# * I Sign In and visit the dishes index page
+# * I am presented with a list of dishes
+# * Each dish has a title and description
+
+feature "user views dishes", %{
+  As a registerd and authenticated user
+  I want to view a list of dishes
+  So that I can get breakfast ideas
+  } do
   xscenario "user sees a list of dishes on the index page" do
     user = FactoryGirl.create(:user)
     dish_1 = FactoryGirl.create(:dish)
