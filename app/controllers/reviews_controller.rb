@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
     @dish = Dish.find(params[:dish_id])
     @review = Review.new(review_params)
     if @review.save
+      WelcomeMailer.new_review(@review).deliver_later
       flash[:notice] = "Review added successfully"
       redirect_to @dish
     else
