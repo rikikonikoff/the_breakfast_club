@@ -2,7 +2,12 @@ class DishesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @dishes = Dish.all
+    if params[:search]
+      @dishes = Dish.search(params[:search])
+    else
+      @dishes = Dish.all
+    end
+
     respond_to do |format|
       format.html
       format.json { render json: @dishes }
