@@ -1,7 +1,17 @@
 require "rails_helper"
 
+# Acceptance Criteria:
+# * I click "Sign Up" on the dishes index page
+# * I am presented with a form
+# * I must submit valid username, email, password and a photo
+# * I will be prompted to enter correct information if I enter invalid information
+# * I will click "Sign up"
+# * I will be redirected to the dishes index page
+
 feature "user registers", %{
-  As a user, I want to register so that I can create an account
+  As an unregistered user
+  I want to register
+  So that I can create an account
 } do
 
   scenario "provide valid registration information" do
