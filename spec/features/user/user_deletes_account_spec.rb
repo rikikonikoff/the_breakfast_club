@@ -1,10 +1,17 @@
 require "rails_helper"
 
+# Acceptance Criteria:
+# * On my user account page, I see a "Destroy my account!" button
+# * If I click "Delete Account", I receive a message saying "Your account has been successfully cancelled"
+# * I can no longer Sign In without registering as a new user
+
 feature "user deletes account", %{
-  As a user, I want to delete my account
+  As a registered and unauthenticated user
+  I want to delete my account
+  If I am unsatisfied
 } do
 
-  scenario "delete account" do
+  xscenario "delete account" do
     visit new_user_registration_path
 
     fill_in "Email", with: "thomas12345@example.com"

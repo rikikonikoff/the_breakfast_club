@@ -1,6 +1,17 @@
 require 'rails_helper'
 
-RSpec.feature "user can create a new dish" do
+# Acceptance Criteria:
+# * I click "Add a New Dish" on the dishes index page
+# * I am presented with a form requesting dish name and description
+# * I click button "Add Dish"
+# * I see my dish on it's own show page
+# * On the dishes index page, I see my dish added to the list of dishes
+
+RSpec.feature "user can create a new dish", %{
+  As a registered and authenticated user
+  I want to create a new dish
+  To share my thoughts
+  } do
   scenario "user is not signed in" do
 
     visit dishes_path

@@ -1,7 +1,16 @@
 require 'rails_helper'
 
-feature "user views dishes" do
-  scenario "user sees a list of dishes on the index page" do
+# Acceptance Criteria:
+# * I Sign In and visit the dishes index page
+# * I am presented with a list of dishes
+# * Each dish has a title and description
+
+feature "user views dishes", %{
+  As a registerd and authenticated user
+  I want to view a list of dishes
+  So that I can get breakfast ideas
+  } do
+  xscenario "user sees a list of dishes on the index page" do
     user = FactoryGirl.create(:user)
     dish_1 = FactoryGirl.create(:dish)
     dish_2 = FactoryGirl.create(:dish)
@@ -18,7 +27,7 @@ feature "user views dishes" do
     expect(page).to_not have_content dish_3.description
   end
 
-  scenario "user sees show page after clicking on a dish" do
+  xscenario "user sees show page after clicking on a dish" do
     user = FactoryGirl.create(:user)
     dish_1 = FactoryGirl.create(:dish)
     dish_2 = FactoryGirl.create(:dish)

@@ -1,7 +1,14 @@
 require "spec_helper"
 
+# Acceptance Criteria:
+# * As a signed in user, I click "Sign Out" on the dishes index page
+# * I am redirected to the landing page
+# * I see a flash notice that says "You have successfully signed out"
+
 feature "user signs out", %{
-  As an authenticated user, I want to sign out
+  As an registered and authenticated user
+  I want to sign out
+  To protect my identity
 } do
   scenario "authenticated user signs out" do
     user = FactoryGirl.create(:user)

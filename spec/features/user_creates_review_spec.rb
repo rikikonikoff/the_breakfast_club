@@ -1,7 +1,20 @@
 require 'rails_helper'
 
-RSpec.feature "user can create a new review" do
-  scenario "user is not signed in" do
+# Acceptance Criteria:
+# * I visit a dish show page
+# * I see a button "Add a Review"
+# * I click "Add a Review"
+# * I am presented with a form requesting a rating and review
+# * If I enter invalid information, I will receive a prompt to enter correct information
+# * If I enter valid information and click "Add Review", I am redirected to the dish show page
+# * I see my review under the dish
+
+RSpec.feature "user can create a new review", %{
+  As a registered and authenticated user
+  I want to create a review
+  To share my thoughts about a particular dish
+  } do
+  xscenario "user is not signed in" do
     user = FactoryGirl.create(:user)
     dish = FactoryGirl.create(:dish)
 
@@ -11,7 +24,7 @@ RSpec.feature "user can create a new review" do
     expect(page).to have_content "You need to sign in or sign up before continuing"
   end
 
-  scenario "user is signed in and creates a review successfully" do
+  xscenario "user is signed in and creates a review successfully" do
     user = FactoryGirl.create(:user)
     dish = FactoryGirl.create(:dish)
 
@@ -28,7 +41,7 @@ RSpec.feature "user can create a new review" do
     expect(page).to have_content user.username
   end
 
-  scenario "user does not enter a rating when submitting a review" do
+  xscenario "user does not enter a rating when submitting a review" do
     user = FactoryGirl.create(:user)
     dish = FactoryGirl.create(:dish)
 
@@ -41,7 +54,7 @@ RSpec.feature "user can create a new review" do
     expect(page).to have_content "Rating can't be blank"
   end
 
-  scenario "user does not enter a body when submitting a review" do
+  xscenario "user does not enter a body when submitting a review" do
     user = FactoryGirl.create(:user)
     dish = FactoryGirl.create(:dish)
 
