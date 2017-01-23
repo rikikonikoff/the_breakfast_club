@@ -1,19 +1,11 @@
 <div>
-  <%= render "search" %>
-</div>
-
-<% if @dishes.empty? %>
-  <h4>There are no dishes containing the term <%= params[:search] %>.</h4>
-<% end %>
-
-<ul style="list-style: none;">
-  <% @dishes.each do |dish| %>
-    <li>
+  <ul>
+    <% @dishes.each do |dish| %>
       <%= link_to dish.name, dish_path(dish) %>
-    </li>
-  <% end %>
-</ul>
+    <% end %>
+  </ul>
 
-<div>
-  <%= link_to "Add a New Dish", new_dish_path %>
+  <div>
+    <%= link_to "Add a New Dish", new_dish_path %>
+  </div>
 </div>

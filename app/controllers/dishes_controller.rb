@@ -4,6 +4,9 @@ class DishesController < ApplicationController
   def index
     if params[:search]
       @dishes = Dish.search(params[:search])
+      if @dishes.empty?
+        flash[:notice] = "There are no dishes containing the term #{params[:search]}"
+      end
     else
       @dishes = Dish.all
     end
