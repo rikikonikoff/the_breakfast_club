@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
     @dish = Dish.find(params[:dish_id])
     @reviewer = current_user
     @review = Review.new(review_params)
+    @review.reviewer_id = @reviewer.id
     if @review.save
       flash[:notice] = "Review added successfully"
       redirect_to dish_path(@dish)

@@ -11,7 +11,7 @@ feature "user deletes account", %{
   If I am unsatisfied
 } do
 
-  xscenario "delete account" do
+  scenario "delete account" do
     visit new_user_registration_path
 
     fill_in "Email", with: "thomas12345@example.com"
