@@ -1,0 +1,4 @@
+<%= form_tag(dishes_path, method: "get") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Dishes" %>
+  <%= submit_tag("Search") %>
+<% end %>

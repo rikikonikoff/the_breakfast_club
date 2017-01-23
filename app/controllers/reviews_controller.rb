@@ -8,10 +8,12 @@ class ReviewsController < ApplicationController
 
   def create
     @dish = Dish.find(params[:dish_id])
+    @reviewer = current_user
     @review = Review.new(review_params)
+    @review.reviewer_id = @reviewer.id
     if @review.save
       flash[:notice] = "Review added successfully"
-      redirect_to @dish
+      redirect_to dish_path(@dish)
     else
       flash[:notice] = @review.errors.full_messages.to_sentence
       render :new
@@ -21,8 +23,18 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:rating, :body, :upvote_count, :downvote_count, :net_votes, :votes).merge(
+    params.require(:review).permit(
+      :rating,
+      :body,
+      :reviewer_id,
+      :dish_id,
+      :upvote_count,
+      :downvote_count,
+      :net_votes,
+      :votes
+    ).merge(
       dish: Dish.find(params[:dish_id]),
-      reviewer: User.find(current_user.id))
+      reviewer: current_user
+    )
   end
 end

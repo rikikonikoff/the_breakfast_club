@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   has_many :created_dishes, class_name: :Dish
   has_many :created_reviews, class_name: :Review
-  has_many :dishes, through: :reviews
+  has_many :dishes, through: :created_reviews
   has_many :votes
   has_many :reviews, through: :votes
 

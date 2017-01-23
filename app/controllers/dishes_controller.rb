@@ -2,10 +2,10 @@ class DishesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @dishes = Dish.all
-    respond_to do |format|
-      format.html
-      format.json { render json: @dishes }
+    if params[:search]
+      @dishes = Dish.search(params[:search])
+    else
+      @dishes = Dish.all
     end
   end
 
@@ -13,10 +13,6 @@ class DishesController < ApplicationController
     @id = params[:id]
     @dish = Dish.find(params[:id])
     @reviews = @dish.reviews
-    respond_to do |format|
-      format.html
-      format.json { render json: [@dish, @reviews] }
-    end
   end
 
   def new
@@ -39,6 +35,7 @@ class DishesController < ApplicationController
   private
 
   def dish_params
-    params.require(:dish).permit(:name, :description, :creator_id)
+    params.require(:dish).permit(:name, :description, :creator_id).merge(
+      creator: current_user)
   end
 end
