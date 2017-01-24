@@ -15,10 +15,13 @@ RSpec.feature "user can edit dishes", %{
 
     login_as(user)
     visit dish_path(dish)
-    click_link "Edit this Dish"
+    click_button "Edit this Dish"
+    fill_in "Name", with: "french toast"
+    fill_in "Description", with: "sometimes dry"
+    click_button "Submit Dish"
 
-    expect(page).to have_content "Name"
-    expect(page).to have_content "Description"
+    expect(page).to have_content "french toast"
+    expect(page).to have_content "sometimes dry"
    end
 
    scenario "user tries to edit a dish they did not create" do
@@ -28,7 +31,7 @@ RSpec.feature "user can edit dishes", %{
 
     login_as(user_2)
     visit dish_path(dish)
-    click_link "Edit this Dish"
+    click_button "Edit this Dish"
 
     expect(page).to have_content "Sorry, you can't edit somone else's dish!"
    end
