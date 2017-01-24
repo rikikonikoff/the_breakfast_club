@@ -13,6 +13,12 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :admin do
+    resources :users
+    resources :dishes do
+      resources :reviews
+    end
+  end
 
   namespace :api do
     namespace :v1 do
