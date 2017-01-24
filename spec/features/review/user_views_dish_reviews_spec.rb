@@ -21,7 +21,6 @@ feature "user views reviews for a given dish", %{
     expect(page).to have_content review_1.rating
     expect(page).to have_content review_1.body
 
-
     expect(page).to_not have_content review_2.body
   end
 

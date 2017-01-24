@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :users
 
   resources :dishes do
-    resources :reviews, only: [:new, :create, :destroy] do
+    resources :reviews do
       resources :votes, only: [:create, :edit, :update, :destroy]
     end
   end

@@ -35,6 +35,27 @@ class DishesController < ApplicationController
     end
   end
 
+  def edit
+    @dish = Dish.find(params[:id])
+    @creator = @dish.creator
+    if current_user != @creator
+      flash[:notice] = "Sorry, you can't edit somone else's dish!"
+      redirect_to @dish
+    end
+  end
+
+  def update
+    @dish = Dish.find(params[:id])
+    @creator = @dish.creator
+    if @dish.save
+      flash[:notice] = "Dish updated successfully"
+      redirect_to @dish
+    else
+      flash[:notice] = @dish.errors.full_messages.to_sentence
+      render :edit
+    end
+  end
+
   def destroy
     @dish = Dish.find(params[:id])
     @reviews = @dish.reviews
