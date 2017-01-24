@@ -3,6 +3,6 @@ FactoryGirl.define do
     association :reviewer, factory: :user
     association :dish, factory: :dish
     rating 5
-    body "This is so yummy"
+    sequence(:body) { |n| "This is so yummy #{n}" }
   end
 end

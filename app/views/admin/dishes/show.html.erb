@@ -1,0 +1,15 @@
+<h1><%= @dish.name %></h1>
+
+<p>Description: <%= @dish.description %></p>
+<p>Created by: <%= @dish.creator.username %></p>
+
+<ul style="list-style: none;">
+  <% @reviews.each do |review| %>
+    <li>
+      <%= review.rating %> (<%= review.reviewer.username %>) <%= review.body %>
+      Votes: <%= review.net_votes %> <%= link_to "Delete this Review", admin_dish_review_path(@dish, review), method: :delete %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Delete this Dish", admin_dish_path(@dish), method: :delete %>
