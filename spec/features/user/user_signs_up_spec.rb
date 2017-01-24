@@ -38,7 +38,7 @@ feature "user registers", %{
     expect(page).to_not have_content("Sign Out")
   end
 
-  xscenario 'user uploads profile photo' do
+  scenario 'user uploads profile photo' do
     visit new_user_registration_path
 
     fill_in "Email", with: "thomas12345@example.com"
@@ -48,6 +48,8 @@ feature "user registers", %{
     attach_file "Avatar", "#{Rails.root}/spec/fixtures/myfiles/pizza_party.png"
 
     click_button "Sign up"
+    click_link "thomas12345@example.com"
+    click_button "Edit my account!"
 
     expect(page).to have_css("img[src*='pizza_party.png']")
   end
