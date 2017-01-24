@@ -21,6 +21,29 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit
+    @review = Review.find(params[:id])
+    @dish = @review.dish
+    @reviewer = @review.reviewer
+    if current_user != @reviewer
+      flash[:notice] = "Sorry, you can't edit someone else's review!"
+      redirect_to @dish
+    end
+  end
+
+  def update
+    @review = Review.find(params[:id])
+    @dish = @review.dish
+    @reviewer = @review.reviewer
+    if @review.save
+      flash[:notice] = "Review updated successfully"
+      redirect_to @dish
+    else
+      flash[:notice] = @review.errors.full_messages.to_sentence
+      render :edit
+    end
+  end
+
   def destroy
     @dish = Dish.find(params[:dish_id])
     @review = Review.find(params[:id])
