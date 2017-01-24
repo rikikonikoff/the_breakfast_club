@@ -47,7 +47,7 @@ class DishesController < ApplicationController
   def update
     @dish = Dish.find(params[:id])
     @creator = @dish.creator
-    if @dish.save
+    if @dish.update(dish_params)
       flash[:notice] = "Dish updated successfully"
       redirect_to @dish
     else

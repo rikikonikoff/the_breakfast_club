@@ -38,7 +38,7 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @dish = @review.dish
     @reviewer = @review.reviewer
-    if @review.save
+    if @review.update(review_params)
       flash[:notice] = "Review updated successfully"
       redirect_to @dish
     else
