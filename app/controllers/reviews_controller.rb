@@ -1,6 +1,9 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+  end
+
   def new
     @review = Review.new
     @dish = Dish.find(params[:dish_id])
@@ -35,7 +38,7 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @dish = @review.dish
     @reviewer = @review.reviewer
-    if @review.save
+    if @review.update(review_params)
       flash[:notice] = "Review updated successfully"
       redirect_to @dish
     else

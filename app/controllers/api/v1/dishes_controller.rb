@@ -1,4 +1,6 @@
 class Api::V1::DishesController < ApplicationController
+  skip_before_action :verify_authenticity_token
+  
   def index
     if params[:search]
       render json: Dish.search(params[:search])

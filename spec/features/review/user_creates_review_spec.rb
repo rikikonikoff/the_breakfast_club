@@ -20,7 +20,7 @@ RSpec.feature "user can create a new review", %{
 
     logout(:user)
     visit dish_path(dish)
-    click_link "Review this Dish"
+    click_button "Review this Dish"
     expect(page).to have_content "You need to sign in or sign up before continuing"
   end
 
@@ -30,7 +30,7 @@ RSpec.feature "user can create a new review", %{
 
     visit dish_path(dish)
     login_as(user, :scope => :user, :run_callbacks => false)
-    click_link "Review this Dish"
+    click_button "Review this Dish"
     fill_in "Rating", with: "4"
     fill_in "comments on your rating", with: "This place is pretty rad"
     click_button "Review #{dish.name}"
@@ -47,7 +47,7 @@ RSpec.feature "user can create a new review", %{
 
     visit dish_path(dish)
     login_as(user, :scope => :user, :run_callbacks => false)
-    click_link "Review this Dish"
+    click_button "Review this Dish"
     fill_in "comments on your rating", with: "I love this for breakfast!"
     click_button "Review #{dish.name}"
 
@@ -60,7 +60,7 @@ RSpec.feature "user can create a new review", %{
 
     visit dish_path(dish)
     login_as(user, :scope => :user, :run_callbacks => false)
-    click_link "Review this Dish"
+    click_button "Review this Dish"
     fill_in "Rating", with: "5"
     click_button "Review #{dish.name}"
 

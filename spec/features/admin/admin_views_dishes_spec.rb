@@ -71,7 +71,7 @@ RSpec.feature "admin can see all of the dishes", %{
 
     login_as(user)
     visit dish_path(dish)
-    click_link "Delete this Dish"
+    click_button "Delete this Dish"
 
     expect(page).to have_content "Sorry, you can't delete someone else's dish"
   end
@@ -84,7 +84,7 @@ RSpec.feature "admin can see all of the dishes", %{
 
     login_as(user_2)
     visit dish_path(dish)
-    click_link "Delete this Review"
+    click_button "Delete this Review"
 
     expect(page).to have_content "Sorry, you can't delete someone else's review"
   end
