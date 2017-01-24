@@ -27,7 +27,7 @@ RSpec.feature "user can create a new dish", %{
     click_link "Add a New Dish"
     fill_in "Name", with: "Coffee"
     fill_in "Description", with: "Nectar of the gods"
-    click_button "Add Dish"
+    click_button "Submit Dish"
 
     expect(page).to have_content "Dish added successfully"
     expect(page).to have_content "Coffee"
@@ -42,7 +42,7 @@ RSpec.feature "user can create a new dish", %{
     login_as(user, :scope => :user, :run_callbacks => false)
     click_link "Add a New Dish"
     fill_in "Description", with: "Tom loves this breakfast"
-    click_button "Add Dish"
+    click_button "Submit Dish"
 
     expect(page).to have_content "Name can't be blank"
   end
@@ -54,7 +54,7 @@ RSpec.feature "user can create a new dish", %{
     login_as(user, :scope => :user, :run_callbacks => false)
     click_link "Add a New Dish"
     fill_in "Name", with: "Pancakes"
-    click_button "Add Dish"
+    click_button "Submit Dish"
 
     expect(page).to have_content "Dish added successfully"
     expect(page).to have_content "Pancakes"

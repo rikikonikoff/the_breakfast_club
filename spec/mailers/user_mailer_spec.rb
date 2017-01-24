@@ -9,7 +9,7 @@ RSpec.feature "dish creator gets emails when dish is reviewed" do
     login_as(user, :scope => :user, :run_callbacks => false)
 
     visit dish_path(dish)
-    click_link "Review this Dish"
+    click_button "Review this Dish"
     fill_in "Rating", with: "4"
     fill_in "comments on your rating", with: "This dish is pretty rad"
     click_button "Review #{dish.name}"

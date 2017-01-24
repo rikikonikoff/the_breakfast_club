@@ -16,10 +16,12 @@ RSpec.feature "user can edit reviews", %{
 
      login_as(user)
      visit dish_path(dish)
-     click_link "Edit this Review"
+     click_button "Edit this Review"
+     fill_in "Rating", with: 4
+     fill_in "comments on your rating", with: "it's pretty good"
+     click_button "Review #{dish.name}"
 
-     expect(page).to have_content "Rating"
-     expect(page).to have_content "comments on your rating"
+     expect(page).to have_content "it's pretty good"
    end
 
    scenario "user tries to edit a review they did not create" do
@@ -30,7 +32,7 @@ RSpec.feature "user can edit reviews", %{
 
     login_as(user_2)
     visit dish_path(dish)
-    click_link "Edit this Review"
+    click_button "Edit this Review"
 
     expect(page).to have_content "Sorry, you can't edit someone else's review!"
     expect(page).to_not have_content "Rating"
