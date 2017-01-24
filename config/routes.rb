@@ -8,7 +8,7 @@ resources :homes, only: [:index]
 
   resources :dishes do
     resources :reviews, only: [:new, :create] do
-      resources :votes, only: [:new, :create, :edit, :update, :destroy]
+      resources :votes, only: [:create, :edit, :update, :destroy]
     end
   end
 
@@ -17,6 +17,9 @@ resources :homes, only: [:index]
       resources :dishes do
         resources :users
         resources :reviews
+      end
+      resources :reviews do
+        resources :votes
       end
     end
   end

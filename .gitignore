@@ -2,17 +2,21 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
+log
 /log/*
 /log/test.log
 /log/development.log
 !/log/.keep
+tmp
 /tmp
 /coverage
 .env
 /.env
+coverage
 /coverage/.resultset.json
 /coverage/.last_run.json
 
+node_modules
 /node_modules
 /app/assets/javascripts/bundle.js
 /react/coverage

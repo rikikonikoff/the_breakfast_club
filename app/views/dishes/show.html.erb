@@ -7,6 +7,9 @@
   <% @reviews.each do |review| %>
     <li>
       <%= review.rating %> (<%= review.reviewer.username %>) <%= review.body %>
+      <%= link_to "Like", dish_review_votes_path(@dish, review, vote_value: 1), method: :create %>
+      Votes: <%= review.net_votes %>
+      <%= link_to "Dislike", dish_review_votes_path(@dish, review, vote_value: -1), method: :create %>
     </li>
   <% end %>
 </ul>
