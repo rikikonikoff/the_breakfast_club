@@ -1,10 +1,12 @@
 class UserMailer < ApplicationMailer
-  default from: 'breakfastclub.welcomer@gmail.com'
+  default from: 'breakfastclub.welcomer@example.com'
 
-  def new_review(user)
-    @user = User.find(params[:id])
-    @url = 'http://localhost:3000'
-    mail(to: @user.email, subject: 'Welcome to The Breakfast Club!')
+  def new_review(review)
+    @dish = Dish.find(review.dish_id)
+    @email = @dish.creator.email
+    mail(
+      to: @email,
+      subject: 'Someone has reviewed your dish on The Breakfast Club!'
+      )
   end
-
 end

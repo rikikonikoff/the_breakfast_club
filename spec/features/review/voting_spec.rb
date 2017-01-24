@@ -12,8 +12,8 @@ RSpec.feature %{
   } do
 
   scenario "user likes a review" do
-    dish = FactoryGirl.create(dish)
-    review = FactoryGirl.create(review, dish: dish)
+    dish = FactoryGirl.create(:dish)
+    review = FactoryGirl.create(:review, dish: dish)
 
     visit dish_path(dish)
     click_link "Like"
@@ -22,8 +22,8 @@ RSpec.feature %{
   end
 
   scenario "user dislikes a review" do
-    dish = FactoryGirl.create(dish)
-    review = FactoryGirl.create(review, dish: dish)
+    dish = FactoryGirl.create(:dish)
+    review = FactoryGirl.create(:review, dish: dish)
 
     visit dish_path(dish)
     click_link "Dislike"
@@ -32,8 +32,8 @@ RSpec.feature %{
   end
 
   scenario "user tries to like or dislike a review more than once" do
-    dish = FactoryGirl.create(dish)
-    review = FactoryGirl.create(review, dish: dish)
+    dish = FactoryGirl.create(:dish)
+    review = FactoryGirl.create(:review, dish: dish)
 
     visit dish_path(dish)
     click_link "Like"
@@ -43,8 +43,8 @@ RSpec.feature %{
   end
 
   scenario "user changes his or her vote" do
-    dish = FactoryGirl.create(dish)
-    review = FactoryGirl.create(review, dish: dish)
+    dish = FactoryGirl.create(:dish)
+    review = FactoryGirl.create(:review, dish: dish)
 
     visit dish_path(dish)
     click_link "Like"
