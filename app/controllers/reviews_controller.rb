@@ -21,6 +21,18 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def destroy
+    @dish = Dish.find(params[:dish_id])
+    @review = Review.find(params[:id])
+    if current_user.admin? || (current_user == @review.reviewer)
+      @review.destroy
+      flash[:notice] = "Review deleted"
+    else
+      flash[:notice] = "Sorry, you can't delete someone else's review!"
+    end
+    redirect_to dish_path(@dish)
+  end
+
   private
 
   def review_params

@@ -2,13 +2,13 @@ class DishesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
+    @dishes = Dish.all
+
     if params[:search]
-      @dishes = Dish.search(params[:search])
+      @dishes = Dish.search(params[:search].downcase)
       if @dishes.empty?
         flash[:notice] = "There are no dishes containing the term #{params[:search]}"
       end
-    else
-      @dishes = Dish.all
     end
   end
 
@@ -32,6 +32,19 @@ class DishesController < ApplicationController
     else
       flash[:notice] = @dish.errors.full_messages.to_sentence
       render :new
+    end
+  end
+
+  def destroy
+    @dish = Dish.find(params[:id])
+    @reviews = @dish.reviews
+    if current_user.admin? || (current_user == @dish.creator)
+      @dish.destroy
+      flash[:notice] = "Dish deleted"
+      redirect_to dishes_path
+    else
+      flash[:notice] = "Sorry, you can't delete someone else's dish!"
+      render :show
     end
   end
 

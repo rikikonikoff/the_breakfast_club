@@ -10,8 +10,10 @@
       <%= link_to "Like", dish_review_votes_path(@dish, review, vote_value: 1), method: :create %>
       Votes: <%= review.net_votes %>
       <%= link_to "Dislike", dish_review_votes_path(@dish, review, vote_value: -1), method: :create %>
+      <%= link_to "Delete this Review", dish_review_path(@dish, review), method: :delete %>
     </li>
   <% end %>
 </ul>
 
 <%= link_to "Review this Dish", new_dish_review_path(@dish) %>
+<%= link_to "Delete this Dish", dish_path(@dish), method: :delete %>

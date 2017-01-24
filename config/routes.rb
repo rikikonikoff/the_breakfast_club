@@ -8,16 +8,16 @@ Rails.application.routes.draw do
   resources :users
 
   resources :dishes do
-    resources :reviews, only: [:new, :create] do
+    resources :reviews, only: [:new, :create, :destroy] do
       resources :votes, only: [:create, :edit, :update, :destroy]
     end
   end
 
   namespace :admin do
-    resources :users
     resources :dishes do
       resources :reviews
     end
+    resources :users
   end
 
   namespace :api do
