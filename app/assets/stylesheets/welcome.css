@@ -11,6 +11,22 @@ body#home {
   background-size: cover;
 }
 
+.hollow.button {
+  padding: 10px;
+  border-radius: 20px;
+  color: #615566;
+  border-color: #615566;
+  margin: 0;
+}
+
+.hollow.button:focus {
+  outline: none;
+}
+
+.flash {
+  color: #615566;
+}
+
 .top-bar {
   background-color: #615566;
   vertical-align: middle;
@@ -48,5 +64,5 @@ input#search {
 
 strong {
   font-size: 20px;
-  text-align: top;
+  vertical-align: top;
 }
