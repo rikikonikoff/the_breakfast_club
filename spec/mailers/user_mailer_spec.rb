@@ -11,7 +11,7 @@ RSpec.feature "dish creator gets emails when dish is reviewed" do
     visit dish_path(dish)
     click_button "Review this Dish"
     fill_in "Rating", with: "4"
-    fill_in "comments on your rating", with: "This dish is pretty rad"
+    fill_in "Comments", with: "This dish is pretty rad"
     click_button "Review #{dish.name}"
 
     expect(ActionMailer::Base.deliveries.count).to eq(1)

@@ -1,27 +1,24 @@
-<div class="top-bar">
-  <div class="top-bar-title">
-    <strong>The Breakfast Club</strong>
+<div class="top-bar" id="main-menu">
+  <div class="top-bar-left">
+    <div>
+      <div class="small-6 columns">
+        <strong><%= link_to "The Breakfast Club", dishes_path %></strong>
+      </div>
+      <div class="small-6 columns">
+        <%= render "./dishes/search" %>
+      </div>
+    </div>
+    <div class="top-bar-right">
+      <div>
+        <% if current_user %>
+          <%= link_to current_user.email, user_path(current_user) %> |
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete  %> |
+          <%= link_to 'Admin', admin_dishes_path %>
+        <% else %>
+          <%= link_to 'Sign Up', new_user_registration_path %> |
+          <%= link_to 'Sign In', new_user_session_path %>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <div id="responsive-menu">
-    <div class="top-bar-left">
-      <ul class="dropdown menu" data-dropdown-menu>
-        <p>
-          <%- if current_user -%>
-            <%= link_to current_user.email, user_path(current_user) %>
-            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-            <%= link_to 'Admin', admin_dishes_path %>
-          <% else %>
-            <%= link_to 'Sign Up', new_user_registration_path %>
-            <%= link_to 'Sign In', new_user_session_path %>
-          <% end %>
-        </p>
-      </ul>
-   </div>
-   <div class="top-bar-right">
-     <ul class="menu">
-       <div>
-         <%= render "./dishes/search" %>
-       </div>
-     </ul>
-   </div>
- </div>
+</div>
