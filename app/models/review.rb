@@ -4,7 +4,8 @@ class Review < ApplicationRecord
   has_many :votes, dependent: :destroy
   has_many :users, through: :votes
 
-  validates :rating, presence: true, numericality: { only_integer: true }, inclusion: { in: 1..5 }
+  validates :rating, presence: true, numericality: { only_integer: true }
+  validates_inclusion_of :rating, in: 1..5, message: "must be between 1 and 5"
   validates :body, length: { maximum: 140 }, allow_blank: true
   validates :reviewer_id, presence: true
   validates :dish_id, presence: true

@@ -1,21 +1,26 @@
 <h1><%= @dish.name %></h1>
+<div>
+  <div class="small-4 columns"><%= button_to "Review this Dish", new_dish_review_path(@dish), method: :get, class: "hollow button" %></div>
+  <div class="small-4 columns"><%= button_to "Edit this Dish", edit_dish_path(@dish), method: :get, class: "hollow button" %></div>
+  <div class="small-4 columns"><%= button_to "Delete this Dish", dish_path(@dish), method: :delete, class: "hollow button" %></div>
+</div><br>
+<br>
 
-<p>Description: <%= @dish.description %></p>
-<p>Created by: <%= @dish.creator.username %></p>
-
+<div>
+  <p>Description: <%= @dish.description %></p>
+  <p>Created by: <%= @dish.creator.username %></p>
+</div>
 <ul style="list-style: none;">
   <% @reviews.each do |review| %>
     <li>
       <%= review.rating %> (<%= review.reviewer.username %>) <%= review.body %>
       <%= link_to "Like", dish_review_votes_path(@dish, review, vote_value: 1), method: :create %>
       Votes: <%= review.net_votes %>
-      <%= link_to "Dislike", dish_review_votes_path(@dish, review, vote_value: -1), method: :create %>
-      <%= button_to "Edit this Review", edit_dish_review_path(@dish, review), method: :get %>
-      <%= button_to "Delete this Review", dish_review_path(@dish, review), method: :delete %>
+        <%= link_to "Dislike", dish_review_votes_path(@dish, review, vote_value: -1), method: :create %>
+      <div>
+        <div class="small-6 columns"><%= button_to "Edit this Review", edit_dish_review_path(@dish, review), method: :get, class: "hollow button" %></div>
+        <div class="small-6 columns"><%= button_to "Delete this Review", dish_review_path(@dish, review), method: :delete, class: "hollow button" %></div>
+      </div>
     </li>
   <% end %>
 </ul>
-
-<%= button_to "Review this Dish", new_dish_review_path(@dish), method: :get %>
-<%= button_to "Edit this Dish", edit_dish_path(@dish), method: :get %>
-<%= button_to "Delete this Dish", dish_path(@dish), method: :delete %>

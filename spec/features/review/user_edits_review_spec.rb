@@ -18,7 +18,7 @@ RSpec.feature "user can edit reviews", %{
      visit dish_path(dish)
      click_button "Edit this Review"
      fill_in "Rating", with: 4
-     fill_in "comments on your rating", with: "it's pretty good"
+     fill_in "Comments", with: "it's pretty good"
      click_button "Review #{dish.name}"
 
      expect(page).to have_content "it's pretty good"
@@ -36,6 +36,6 @@ RSpec.feature "user can edit reviews", %{
 
     expect(page).to have_content "Sorry, you can't edit someone else's review!"
     expect(page).to_not have_content "Rating"
-    expect(page).to_not have_content "comments on your rating"
+    expect(page).to_not have_content "Comments"
    end
  end

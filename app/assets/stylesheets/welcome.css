@@ -1,5 +1,5 @@
 body#other {
-  background-color: #3D7B80;
+  background-color: #A5B5AB;
   text-align: center;
 }
 
@@ -9,6 +9,12 @@ body#home {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.top-bar {
+  background-color: #615566;
+  vertical-align: middle;
+  padding-top: 20px;
 }
 
 .title h1 {
@@ -22,4 +28,25 @@ a {
   margin-top: 30px;
   color: black;
   text-align: right;
+}
+
+input {
+  background-color: #A5B5AB;
+  border: 0px;
+  display: inline-block;
+}
+
+input:hover {
+  color: #615566;
+}
+
+input#search {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height: 25px;
+}
+
+strong {
+  font-size: 20px;
+  text-align: top;
 }
