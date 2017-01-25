@@ -1,13 +1,15 @@
-<%= form_for @dish do |f| %>
-  <li>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </li>
-  <li>
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-  </li>
-  <li>
-    <%= f.submit "Submit Dish" %>
-  </li>
-<% end %>
+<div class="small-6 small-centered columns">
+  <%= form_for @dish do |f| %>
+    <li>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </li>
+    <li>
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </li>
+    <li>
+      <%= f.submit "Submit Dish", class: "hollow button" %>
+    </li>
+  <% end %>
+</div>

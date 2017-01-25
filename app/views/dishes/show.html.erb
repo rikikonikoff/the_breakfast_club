@@ -1,26 +1,28 @@
 <h1><%= @dish.name %></h1>
+<div>
+  <div class="small-4 columns"><%= button_to "Review this Dish", new_dish_review_path(@dish), method: :get, class: "hollow button" %></div>
+  <div class="small-4 columns"><%= button_to "Edit this Dish", edit_dish_path(@dish), method: :get, class: "hollow button" %></div>
+  <div class="small-4 columns"><%= button_to "Delete this Dish", dish_path(@dish), method: :delete, class: "hollow button" %></div>
+</div><br>
+<br>
 
-<p>Description: <%= @dish.description %></p>
-<p>Created by: <%= @dish.creator.username %></p>
-
+<div>
+  <p>Description: <%= @dish.description %></p>
+  <p>Created by: <%= @dish.creator.username %></p>
+</div>
 <ul style="list-style: none;">
   <% @reviews.each do |review| %>
-  <div class='review'>
-          Rating: <%= review.rating %>
-          <p class="review-description">
-            Description: <%= review.body %>
-          </p>
-          <br />
-          <p id='voting-number' class="total-votes-<%= review.id %>"><%= review.sum_votes %></p>
-            <%= button_to "Likey", review_votes_path(review, value: 1), id: 'upvote', data: { dishid: "#{@dish.id}", reviewid: "#{review.id}" } %>
-            <%= button_to "Dislikey", review_votes_path(review, value: -1), id: 'downvote', data: { dishid: "#{@dish.id}", reviewid: "#{review.id}" } %>
-            <%= button_to "Edit Review", edit_dish_review_path(@dish, review), method: :get %>
-            <%= button_to "Delete Review", dish_review_path(@dish, review), method: :delete %>
+    <li>
+      Rating: <%= review.rating %> (<%= review.reviewer.username %>) <%= review.body %>
 
-          </div>
+      <p id='voting-number' class="total-votes-<%= review.id %>"><%= review.sum_votes %></p>
+      <%= button_to "Likey", review_votes_path(review, value: 1), id: 'upvote', data: { dishid: "#{@dish.id}", reviewid: "#{review.id}" } %>
+      <%= button_to "Dislikey", review_votes_path(review, value: -1), id: 'downvote', data: { dishid: "#{@dish.id}", reviewid: "#{review.id}" } %>
+
+      <div>
+        <div class="small-6 columns"><%= button_to "Edit this Review", edit_dish_review_path(@dish, review), method: :get, class: "hollow button" %></div>
+        <div class="small-6 columns"><%= button_to "Delete this Review", dish_review_path(@dish, review), method: :delete, class: "hollow button" %></div>
+      </div>
+    </li>
   <% end %>
 </ul>
-
-<%= button_to "Review this Dish", new_dish_review_path(@dish), method: :get %>
-<%= button_to "Edit this Dish", edit_dish_path(@dish), method: :get %>
-<%= button_to "Delete this Dish", dish_path(@dish), method: :delete %>
