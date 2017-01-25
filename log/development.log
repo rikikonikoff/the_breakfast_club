@@ -15727,3 +15727,765 @@ Processing by VotesController#create as JSON
 Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 6.7ms)
 
 
+Started GET "/" for ::1 at 2017-01-25 13:51:48 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (24.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.1) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.1) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/dermy22/.gem/ruby/2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/dermy22/.gem/ruby/2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/dermy22/.gem/ruby/2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /Users/dermy22/.gem/ruby/2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/dermy22/.gem/ruby/2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendering /Users/dermy22/.gem/ruby/2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/dermy22/.gem/ruby/2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/dermy22/.gem/ruby/2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (131.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (154.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (984.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "the_breakfast_club_development"[0m
+  [1m[35m (182.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "the_breakfast_club_test"[0m
+  [1m[35m (1024.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (34.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (17.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4868525308640801640);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20170117190930)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (357.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "username" character varying DEFAULT '' NOT NULL, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (56.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (185.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170117190930"]]
+  [1m[35m (14.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDishes (20170118153809)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "dishes" ("id" serial primary key, "creator_id" integer, "name" character varying NOT NULL, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_dishes_on_creator_id" ON "dishes"  ("creator_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170118153809"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNullFalseToCreatorId (20170118155710)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "dishes" ALTER "creator_id" SET NOT NULL[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170118155710"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateReviews (20170118195459)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" serial primary key, "dish_id" integer NOT NULL, "user_id" integer NOT NULL, "rating" integer NOT NULL, "body" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_dish_id" ON "reviews"  ("dish_id")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_user_id" ON "reviews"  ("user_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170118195459"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAvatarToUsers (20170119153650)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (19.8ms)[0m  [1m[35mALTER TABLE "users" ADD "avatar" character varying[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170119153650"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddVoteCountsToReviews (20170119163112)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (49.0ms)[0m  [1m[35mALTER TABLE "reviews" ADD "upvote_count" integer DEFAULT 0[0m
+  [1m[35m (72.8ms)[0m  [1m[35mALTER TABLE "reviews" ADD "downvote_count" integer DEFAULT 0[0m
+  [1m[35m (36.5ms)[0m  [1m[35mALTER TABLE "reviews" ADD "sum_votes" integer DEFAULT 0[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170119163112"]]
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateVotes (20170119163635)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (27.9ms)[0m  [1m[35mCREATE TABLE "votes" ("id" serial primary key, "review_id" integer NOT NULL, "user_id" integer NOT NULL, "vote_value" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (15.4ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_review_id" ON "votes"  ("review_id")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_user_id" ON "votes"  ("user_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170119163635"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to EditReviewerName (20170119181906)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.6ms)[0m  [1m[35mALTER TABLE "reviews" RENAME COLUMN "user_id" TO "reviewer_id"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER INDEX "index_reviews_on_user_id" RENAME TO "index_reviews_on_reviewer_id"[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170119181906"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAdminToUser (20170124162654)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (234.3ms)[0m  [1m[35mALTER TABLE "users" ADD "admin" boolean DEFAULT 'f'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170124162654"]]
+  [1m[35m (15.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to FixVotingReviews (20170124210321)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.9ms)[0m  [1m[35mALTER TABLE "reviews" DROP "upvote_count"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "reviews" DROP "downvote_count"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "reviews" DROP "sum_votes"[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170124210321"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to FixVotingReviews2 (20170124211133)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "reviews" ADD "sum_votes" integer[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170124211133"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to FixVotingReviews3 (20170124211457)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "votes" DROP "vote_value"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170124211457"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to FixVotingReviews4 (20170124211736)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "votes" ADD "value" integer[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170124211736"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to Vooooootttesssssss (20170125143546)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "reviews" ALTER COLUMN "sum_votes" TYPE integer[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "reviews" ALTER COLUMN "sum_votes" SET DEFAULT 0[0m
+  [1m[35m (51.6ms)[0m  [1m[33mUPDATE "reviews" SET "sum_votes"=0 WHERE "sum_votes" IS NULL[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "reviews" ALTER "sum_votes" SET NOT NULL[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170125143546"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (32.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (14.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-01-25 18:54:08 UTC], ["updated_at", 2017-01-25 18:54:08 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(4868525308640801640)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2017-01-25 13:55:27 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (37.2ms)
+Completed 200 OK in 54833ms (Views: 54773.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dishes" for ::1 at 2017-01-25 13:56:26 -0500
+Processing by DishesController#index as HTML
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mDish Load (174.0ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  Rendered dishes/index.html.erb within layouts/application (272.5ms)
+  Rendered dishes/_search.html.erb (1.9ms)
+  Rendered layouts/_navbar.html.erb (39.8ms)
+Completed 200 OK in 2588ms (Views: 2218.6ms | ActiveRecord: 267.9ms)
+
+
+Started GET "/dishes" for ::1 at 2017-01-25 13:56:53 -0500
+Processing by DishesController#index as HTML
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mDish Load (0.7ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  Rendered dishes/index.html.erb within layouts/application (4.6ms)
+  Rendered dishes/_search.html.erb (1.7ms)
+  Rendered layouts/_navbar.html.erb (45.7ms)
+Completed 200 OK in 746ms (Views: 705.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2017-01-25 13:56:55 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (554.2ms)
+  Rendered dishes/_search.html.erb (0.7ms)
+  Rendered layouts/_navbar.html.erb (2.8ms)
+Completed 200 OK in 869ms (Views: 752.3ms | ActiveRecord: 11.1ms)
+
+
+Started POST "/users" for ::1 at 2017-01-25 13:57:46 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k0oA+u72iHg4GlNavB68Etzpp6cJZJuq9LNMbwz2J8y0gFDYLH1KVTt/qJ7BkyUSNgPNfg1h5J5YwzyzbQOSJQ==", "user"=>{"username"=>"mmcderm8", "email"=>"mcdermottm24@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f990a2aab20 @tempfile=#<Tempfile:/var/folders/hc/mczb36n146d2gzbjg6s3ywy40000gn/T/RackMultipart20170125-43977-1ur7ly1.png>, @original_filename="cruiser.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"cruiser.png\"\r\nContent-Type: image/png\r\n">, "avatar_cache"=>""}, "commit"=>"Sign up"}
+Unpermitted parameter: avatar_cache
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (33.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mcdermottm24@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (181.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at", "avatar") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "mmcderm8"], ["email", "mcdermottm24@gmail.com"], ["encrypted_password", "$2a$11$QLtIEGcs6dmYYiAEeu9/ke99rl9DnEdCBHYhKNWR1wDc7NgVlIfOW"], ["created_at", 2017-01-25 18:57:46 UTC], ["updated_at", 2017-01-25 18:57:46 UTC], ["avatar", "cruiser.png"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (43.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", 2017-01-25 18:57:47 UTC], ["last_sign_in_at", 2017-01-25 18:57:47 UTC], ["current_sign_in_ip", "::1/128"], ["last_sign_in_ip", "::1/128"], ["updated_at", 2017-01-25 18:57:47 UTC], ["id", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/dishes
+Completed 302 Found in 848ms (ActiveRecord: 261.6ms)
+
+
+Started GET "/dishes" for ::1 at 2017-01-25 13:57:47 -0500
+Processing by DishesController#index as HTML
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mDish Load (0.6ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  Rendered dishes/index.html.erb within layouts/application (67.9ms)
+  [1m[36mUser Load (59.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered dishes/_search.html.erb (3.2ms)
+  Rendered layouts/_navbar.html.erb (102.4ms)
+Completed 200 OK in 1323ms (Views: 1242.6ms | ActiveRecord: 60.1ms)
+
+
+Started GET "/dishes/new" for ::1 at 2017-01-25 13:57:55 -0500
+Processing by DishesController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dishes/new.html.erb within layouts/application
+  Rendered dishes/_form.html.erb (4.8ms)
+  Rendered dishes/new.html.erb within layouts/application (42.4ms)
+  Rendered dishes/_search.html.erb (1.6ms)
+  Rendered layouts/_navbar.html.erb (5.0ms)
+Completed 200 OK in 502ms (Views: 392.7ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/dishes" for ::1 at 2017-01-25 13:58:06 -0500
+Processing by DishesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6kt5C3M1QyZdL+0kWu47vqOLQrvUGOymtVIEpLTKYkfNgSkpsb6BC15KFuAnY6K+SWEoYtAdk5IZInR41T/Xrg==", "dish"=>{"name"=>"Scrambies", "description"=>"RAHHHHHH"}, "commit"=>"Submit Dish"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (105.0ms)[0m  [1m[32mINSERT INTO "dishes" ("creator_id", "name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["creator_id", 1], ["name", "Scrambies"], ["description", "RAHHHHHH"], ["created_at", 2017-01-25 18:58:06 UTC], ["updated_at", 2017-01-25 18:58:06 UTC]]
+  [1m[35m (22.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/dishes/1
+Completed 302 Found in 263ms (ActiveRecord: 128.6ms)
+
+
+Started GET "/dishes/1" for ::1 at 2017-01-25 13:58:06 -0500
+Processing by DishesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDish Load (0.8ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dishes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."dish_id" = $1[0m  [["dish_id", 1]]
+  Rendered dishes/show.html.erb within layouts/application (10.9ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered dishes/_search.html.erb (0.9ms)
+  Rendered layouts/_navbar.html.erb (5.5ms)
+Completed 200 OK in 268ms (Views: 135.5ms | ActiveRecord: 6.3ms)
+
+
+Started DELETE "/dishes/1" for ::1 at 2017-01-25 13:58:11 -0500
+Processing by DishesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"koI8ds6YTRDEYHUyZ83SxGICFvrY1T4QfakTtSbuiAe1SGxUDBOPPccFjvYaQEvEiOh8I9zQQSTR2WNpRxs97g==", "id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDish Load (0.4ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."dish_id" = $1[0m  [["dish_id", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "dishes" WHERE "dishes"."id" = $1[0m  [["id", 1]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/dishes
+Completed 302 Found in 14ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/dishes" for ::1 at 2017-01-25 13:58:11 -0500
+Processing by DishesController#index as HTML
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mDish Load (0.5ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  Rendered dishes/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered dishes/_search.html.erb (1.0ms)
+  Rendered layouts/_navbar.html.erb (6.4ms)
+Completed 200 OK in 149ms (Views: 123.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/dishes/new" for ::1 at 2017-01-25 13:58:14 -0500
+Processing by DishesController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dishes/new.html.erb within layouts/application
+  Rendered dishes/_form.html.erb (2.0ms)
+  Rendered dishes/new.html.erb within layouts/application (4.8ms)
+  Rendered dishes/_search.html.erb (0.8ms)
+  Rendered layouts/_navbar.html.erb (3.2ms)
+Completed 200 OK in 150ms (Views: 106.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/dishes" for ::1 at 2017-01-25 13:58:21 -0500
+Processing by DishesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WDEu0M/WSJkX2ZIFSXtUW2PQXuV04iY4/bNoU2x2z39/+37yDV2KtBS8acE09s1biTo0PHDnWQxRwxiPDYN6lg==", "dish"=>{"name"=>"Scrambies", "description"=>"RAHHHHHH"}, "commit"=>"Submit Dish"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "dishes" ("creator_id", "name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["creator_id", 1], ["name", "Scrambies"], ["description", "RAHHHHHH"], ["created_at", 2017-01-25 18:58:21 UTC], ["updated_at", 2017-01-25 18:58:21 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/dishes/2
+Completed 302 Found in 8ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/dishes/2" for ::1 at 2017-01-25 13:58:21 -0500
+Processing by DishesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDish Load (0.7ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering dishes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."dish_id" = $1[0m  [["dish_id", 2]]
+  Rendered dishes/show.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered dishes/_search.html.erb (1.2ms)
+  Rendered layouts/_navbar.html.erb (5.5ms)
+Completed 200 OK in 147ms (Views: 132.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/dishes/2/edit" for ::1 at 2017-01-25 13:58:23 -0500
+Processing by DishesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDish Load (0.4ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dishes/edit.html.erb within layouts/application
+  Rendered dishes/_form.html.erb (2.0ms)
+  Rendered dishes/edit.html.erb within layouts/application (4.5ms)
+  Rendered dishes/_search.html.erb (0.9ms)
+  Rendered layouts/_navbar.html.erb (3.0ms)
+Completed 200 OK in 163ms (Views: 132.2ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/dishes/2" for ::1 at 2017-01-25 13:58:24 -0500
+Processing by DishesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"053mhDnKcz0Ao4+3qSnfK+BXOJDa3EzHwBowYc0B8P30V7am+0GxEAPGdHPUpEYrCr1SSd7ZM/NsakC9rPRFFA==", "dish"=>{"name"=>"Scrambies", "description"=>"RAHHHHHH"}, "commit"=>"Submit Dish", "id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDish Load (0.8ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/dishes/2
+Completed 302 Found in 9ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/dishes/2" for ::1 at 2017-01-25 13:58:24 -0500
+Processing by DishesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDish Load (0.6ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering dishes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."dish_id" = $1[0m  [["dish_id", 2]]
+  Rendered dishes/show.html.erb within layouts/application (5.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered dishes/_search.html.erb (0.8ms)
+  Rendered layouts/_navbar.html.erb (4.7ms)
+Completed 200 OK in 282ms (Views: 275.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/dishes/2/reviews/new" for ::1 at 2017-01-25 13:58:26 -0500
+Processing by ReviewsController#new as HTML
+  Parameters: {"dish_id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDish Load (0.7ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (5.1ms)
+  Rendered reviews/new.html.erb within layouts/application (27.4ms)
+  Rendered dishes/_search.html.erb (1.1ms)
+  Rendered layouts/_navbar.html.erb (4.0ms)
+Completed 200 OK in 230ms (Views: 146.4ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/dishes/2/reviews" for ::1 at 2017-01-25 13:58:47 -0500
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EzLDLLcmtWGAEEXmC+qvfKORqpT41yL8ZT0cAuxBDnk0+JMOda13TIN1viJ2ZzZ8SXvATfzSXcjJTWzejbS7kA==", "review"=>{"rating"=>"6", "body"=>"Scrambies are thrilly dillys favorite food. "}, "commit"=>"Review Scrambies", "dish_id"=>"2"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDish Load (0.4ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.8ms)[0m  [1m[31mROLLBACK[0m
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (2.8ms)
+  Rendered reviews/new.html.erb within layouts/application (5.8ms)
+  Rendered dishes/_search.html.erb (0.7ms)
+  Rendered layouts/_navbar.html.erb (3.6ms)
+Completed 200 OK in 805ms (Views: 771.7ms | ActiveRecord: 22.6ms)
+
+
+Started POST "/dishes/2/reviews" for ::1 at 2017-01-25 13:58:55 -0500
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"evJA0ttamXlCOfVK2h98JMrZiyEYCGiU88wUXQVz+9tdOBDwGdFbVEFcDo6nkuUkIDPh+BwNF6BfvGSBZIZOMg==", "review"=>{"rating"=>"5", "body"=>"Scrambies are thrilly dillys favorite food. "}, "commit"=>"Review Scrambies", "dish_id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDish Load (0.2ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "reviews" ("dish_id", "reviewer_id", "rating", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["dish_id", 2], ["reviewer_id", 1], ["rating", 5], ["body", "Scrambies are thrilly dillys favorite food. "], ["created_at", 2017-01-25 18:58:55 UTC], ["updated_at", 2017-01-25 18:58:55 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mDish Load (0.5ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering user_mailer/new_review.html.erb
+  Rendered user_mailer/new_review.html.erb (0.6ms)
+UserMailer#new_review: processed outbound mail in 447.6ms
+Sent mail to mcdermottm24@gmail.com (92.7ms)
+Date: Wed, 25 Jan 2017 13:58:57 -0500
+From: breakfastclub.welcomer@example.com
+To: mcdermottm24@gmail.com
+Message-ID: <5888f57179441_abc93fcc7faad38c36ac@Matts-MacBook-Pro.local.mail>
+Subject: Someone has reviewed your dish on The Breakfast Club!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>
+      There is a new review on your dish, Scrambies!
+    </p>
+    <p>For the love of breakfast!</p>
+  </body>
+</html>
+
+Redirected to http://localhost:3000/dishes/2
+Completed 302 Found in 2196ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/dishes/2" for ::1 at 2017-01-25 13:58:57 -0500
+Processing by DishesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering dishes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."dish_id" = $1[0m  [["dish_id", 2]]
+  Rendered dishes/show.html.erb within layouts/application (10.9ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered dishes/_search.html.erb (1.1ms)
+  Rendered layouts/_navbar.html.erb (8.0ms)
+Completed 200 OK in 699ms (Views: 666.6ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/reviews/1/votes" for ::1 at 2017-01-25 13:59:08 -0500
+Processing by VotesController#create as JSON
+  Parameters: {"value"=>"1", "review_id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVote Load (17.7ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = 1 AND "votes"."review_id" = 1 ORDER BY "votes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "votes" ("review_id", "user_id", "created_at", "updated_at", "value") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["review_id", 1], ["user_id", 1], ["created_at", 2017-01-25 18:59:08 UTC], ["updated_at", 2017-01-25 18:59:08 UTC], ["value", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mVote Load (0.4ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."review_id" = $1[0m  [["review_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "reviews" SET "sum_votes" = $1, "updated_at" = $2 WHERE "reviews"."id" = $3[0m  [["sum_votes", 1], ["updated_at", 2017-01-25 18:59:08 UTC], ["id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 77ms (Views: 0.3ms | ActiveRecord: 29.1ms)
+
+
+Started POST "/reviews/1/votes" for ::1 at 2017-01-25 13:59:09 -0500
+Processing by VotesController#create as JSON
+  Parameters: {"value"=>"-1", "review_id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVote Load (0.8ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = 1 AND "votes"."review_id" = 1 ORDER BY "votes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", -1], ["updated_at", 2017-01-25 18:59:09 UTC], ["id", 1]]
+  [1m[35m (12.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mVote Load (0.5ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."review_id" = $1[0m  [["review_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "reviews" SET "sum_votes" = $1, "updated_at" = $2 WHERE "reviews"."id" = $3[0m  [["sum_votes", -1], ["updated_at", 2017-01-25 18:59:09 UTC], ["id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 18.1ms)
+
+
+Started POST "/reviews/1/votes" for ::1 at 2017-01-25 13:59:10 -0500
+Processing by VotesController#create as JSON
+  Parameters: {"value"=>"1", "review_id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVote Load (0.7ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = 1 AND "votes"."review_id" = 1 ORDER BY "votes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", 1], ["updated_at", 2017-01-25 18:59:10 UTC], ["id", 1]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mVote Load (0.3ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."review_id" = $1[0m  [["review_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "reviews" SET "sum_votes" = $1, "updated_at" = $2 WHERE "reviews"."id" = $3[0m  [["sum_votes", 1], ["updated_at", 2017-01-25 18:59:10 UTC], ["id", 1]]
+  [1m[35m (28.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 48ms (Views: 0.2ms | ActiveRecord: 34.7ms)
+
+
+Started DELETE "/dishes/2/reviews/1" for ::1 at 2017-01-25 13:59:13 -0500
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"PrG1tsCyYRQSubg9etcQNaHS7FM4WR/fNTlLUPkSS2wZe+WUAjmjORHcQ/kHWok1SziGijxcYOuZSTuMmOf+hQ==", "dish_id"=>"2", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVote Load (0.4ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."review_id" = $1[0m  [["review_id", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 1]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/dishes/2
+Completed 302 Found in 13ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/dishes/2" for ::1 at 2017-01-25 13:59:13 -0500
+Processing by DishesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDish Load (0.4ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering dishes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."dish_id" = $1[0m  [["dish_id", 2]]
+  Rendered dishes/show.html.erb within layouts/application (5.3ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered dishes/_search.html.erb (1.4ms)
+  Rendered layouts/_navbar.html.erb (9.5ms)
+Completed 200 OK in 696ms (Views: 635.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/dishes/2/reviews/new" for ::1 at 2017-01-25 13:59:20 -0500
+Processing by ReviewsController#new as HTML
+  Parameters: {"dish_id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDish Load (0.4ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (3.4ms)
+  Rendered reviews/new.html.erb within layouts/application (7.8ms)
+  Rendered dishes/_search.html.erb (0.8ms)
+  Rendered layouts/_navbar.html.erb (3.0ms)
+Completed 200 OK in 134ms (Views: 118.1ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/dishes/2/reviews" for ::1 at 2017-01-25 13:59:27 -0500
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X9SBtagYdYwkkyj1qzI99QttA1r0wyHbFLZhi+Vj6+d4HtGXapO3oSf20zHWv6T14Ydpg/DGXu+4xhFXhJZeDg==", "review"=>{"rating"=>"5", "body"=>"Scrambies are thrilly dillys favorite food. "}, "commit"=>"Review Scrambies", "dish_id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDish Load (0.5ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "reviews" ("dish_id", "reviewer_id", "rating", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["dish_id", 2], ["reviewer_id", 1], ["rating", 5], ["body", "Scrambies are thrilly dillys favorite food. "], ["created_at", 2017-01-25 18:59:27 UTC], ["updated_at", 2017-01-25 18:59:27 UTC]]
+  [1m[35m (52.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mDish Load (0.8ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering user_mailer/new_review.html.erb
+  Rendered user_mailer/new_review.html.erb (0.6ms)
+UserMailer#new_review: processed outbound mail in 53.6ms
+Sent mail to mcdermottm24@gmail.com (4.3ms)
+Date: Wed, 25 Jan 2017 13:59:27 -0500
+From: breakfastclub.welcomer@example.com
+To: mcdermottm24@gmail.com
+Message-ID: <5888f58f9dddc_abc93fcc7fab00503778@Matts-MacBook-Pro.local.mail>
+Subject: Someone has reviewed your dish on The Breakfast Club!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>
+      There is a new review on your dish, Scrambies!
+    </p>
+    <p>For the love of breakfast!</p>
+  </body>
+</html>
+
+Redirected to http://localhost:3000/dishes/2
+Completed 302 Found in 121ms (ActiveRecord: 55.5ms)
+
+
+Started GET "/dishes/2" for ::1 at 2017-01-25 13:59:27 -0500
+Processing by DishesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering dishes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."dish_id" = $1[0m  [["dish_id", 2]]
+  Rendered dishes/show.html.erb within layouts/application (9.9ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered dishes/_search.html.erb (1.0ms)
+  Rendered layouts/_navbar.html.erb (6.0ms)
+Completed 200 OK in 125ms (Views: 119.8ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/reviews/2/votes" for ::1 at 2017-01-25 13:59:29 -0500
+Processing by VotesController#create as JSON
+  Parameters: {"value"=>"1", "review_id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (0.5ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = 1 AND "votes"."review_id" = 2 ORDER BY "votes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "votes" ("review_id", "user_id", "created_at", "updated_at", "value") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["review_id", 2], ["user_id", 1], ["created_at", 2017-01-25 18:59:29 UTC], ["updated_at", 2017-01-25 18:59:29 UTC], ["value", 1]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mVote Load (0.4ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."review_id" = $1[0m  [["review_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "reviews" SET "sum_votes" = $1, "updated_at" = $2 WHERE "reviews"."id" = $3[0m  [["sum_votes", 1], ["updated_at", 2017-01-25 18:59:29 UTC], ["id", 2]]
+  [1m[35m (44.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 60ms (Views: 0.2ms | ActiveRecord: 49.3ms)
+
+
+Started GET "/dishes/2" for ::1 at 2017-01-25 14:06:34 -0500
+Processing by DishesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDish Load (1.8ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering dishes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."dish_id" = $1[0m  [["dish_id", 2]]
+  Rendered dishes/show.html.erb within layouts/application (205.2ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered dishes/_search.html.erb (2.5ms)
+  Rendered layouts/_navbar.html.erb (57.3ms)
+Completed 200 OK in 3955ms (Views: 3873.3ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/reviews/2/votes" for ::1 at 2017-01-25 14:06:41 -0500
+Processing by VotesController#create as JSON
+  Parameters: {"value"=>"-1", "review_id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (1.2ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = 1 AND "votes"."review_id" = 2 ORDER BY "votes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", -1], ["updated_at", 2017-01-25 19:06:41 UTC], ["id", 2]]
+  [1m[35m (105.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mVote Load (0.6ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."review_id" = $1[0m  [["review_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "reviews" SET "sum_votes" = $1, "updated_at" = $2 WHERE "reviews"."id" = $3[0m  [["sum_votes", -1], ["updated_at", 2017-01-25 19:06:41 UTC], ["id", 2]]
+  [1m[35m (11.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 147ms (Views: 0.3ms | ActiveRecord: 122.8ms)
+
+
+Started POST "/reviews/2/votes" for ::1 at 2017-01-25 14:06:41 -0500
+Processing by VotesController#create as JSON
+  Parameters: {"value"=>"1", "review_id"=>"2"}
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (0.8ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = 1 AND "votes"."review_id" = 2 ORDER BY "votes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", 1], ["updated_at", 2017-01-25 19:06:41 UTC], ["id", 2]]
+  [1m[35m (58.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mVote Load (0.3ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."review_id" = $1[0m  [["review_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "reviews" SET "sum_votes" = $1, "updated_at" = $2 WHERE "reviews"."id" = $3[0m  [["sum_votes", 1], ["updated_at", 2017-01-25 19:06:42 UTC], ["id", 2]]
+  [1m[35m (156.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 244ms (Views: 0.3ms | ActiveRecord: 222.7ms)
+
+
+Started POST "/reviews/2/votes" for ::1 at 2017-01-25 14:07:15 -0500
+Processing by VotesController#create as JSON
+  Parameters: {"value"=>"1", "review_id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (1.0ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = 1 AND "votes"."review_id" = 2 ORDER BY "votes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", 0], ["updated_at", 2017-01-25 19:07:15 UTC], ["id", 2]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mVote Load (0.4ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."review_id" = $1[0m  [["review_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "reviews" SET "sum_votes" = $1, "updated_at" = $2 WHERE "reviews"."id" = $3[0m  [["sum_votes", 0], ["updated_at", 2017-01-25 19:07:15 UTC], ["id", 2]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 24ms (Views: 0.3ms | ActiveRecord: 6.3ms)
+
+
+Started POST "/reviews/2/votes" for ::1 at 2017-01-25 14:07:17 -0500
+Processing by VotesController#create as JSON
+  Parameters: {"value"=>"1", "review_id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (0.6ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = 1 AND "votes"."review_id" = 2 ORDER BY "votes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", 1], ["updated_at", 2017-01-25 19:07:17 UTC], ["id", 2]]
+  [1m[35m (28.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mVote Load (0.3ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."review_id" = $1[0m  [["review_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "reviews" SET "sum_votes" = $1, "updated_at" = $2 WHERE "reviews"."id" = $3[0m  [["sum_votes", 1], ["updated_at", 2017-01-25 19:07:17 UTC], ["id", 2]]
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 53ms (Views: 0.2ms | ActiveRecord: 39.2ms)
+
+
+Started POST "/reviews/2/votes" for ::1 at 2017-01-25 14:07:18 -0500
+Processing by VotesController#create as JSON
+  Parameters: {"value"=>"1", "review_id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (0.6ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = 1 AND "votes"."review_id" = 2 ORDER BY "votes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", 0], ["updated_at", 2017-01-25 19:07:18 UTC], ["id", 2]]
+  [1m[35m (179.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mVote Load (0.3ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."review_id" = $1[0m  [["review_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "reviews" SET "sum_votes" = $1, "updated_at" = $2 WHERE "reviews"."id" = $3[0m  [["sum_votes", 0], ["updated_at", 2017-01-25 19:07:19 UTC], ["id", 2]]
+  [1m[35m (114.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 312ms (Views: 0.4ms | ActiveRecord: 297.4ms)
+
+
+Started POST "/reviews/2/votes" for ::1 at 2017-01-25 14:07:19 -0500
+Processing by VotesController#create as JSON
+  Parameters: {"value"=>"-1", "review_id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (1.0ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = 1 AND "votes"."review_id" = 2 ORDER BY "votes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", -1], ["updated_at", 2017-01-25 19:07:19 UTC], ["id", 2]]
+  [1m[35m (67.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mVote Load (0.4ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."review_id" = $1[0m  [["review_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "reviews" SET "sum_votes" = $1, "updated_at" = $2 WHERE "reviews"."id" = $3[0m  [["sum_votes", -1], ["updated_at", 2017-01-25 19:07:19 UTC], ["id", 2]]
+  [1m[35m (150.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 244ms (Views: 0.3ms | ActiveRecord: 223.0ms)
+
+
+Started POST "/reviews/2/votes" for ::1 at 2017-01-25 14:07:20 -0500
+Processing by VotesController#create as JSON
+  Parameters: {"value"=>"-1", "review_id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (0.7ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."user_id" = 1 AND "votes"."review_id" = 2 ORDER BY "votes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", 0], ["updated_at", 2017-01-25 19:07:20 UTC], ["id", 2]]
+  [1m[35m (29.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mVote Load (0.4ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."review_id" = $1[0m  [["review_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "reviews" SET "sum_votes" = $1, "updated_at" = $2 WHERE "reviews"."id" = $3[0m  [["sum_votes", 0], ["updated_at", 2017-01-25 19:07:20 UTC], ["id", 2]]
+  [1m[35m (208.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 263ms (Views: 0.4ms | ActiveRecord: 243.3ms)
+
+
