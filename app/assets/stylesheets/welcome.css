@@ -62,6 +62,10 @@ input#search {
   height: 25px;
 }
 
+button#search {
+  color: #A5B5AB;
+}
+
 strong {
   font-size: 20px;
   vertical-align: top;
