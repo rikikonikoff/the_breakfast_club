@@ -1,17 +1,20 @@
 Rails.application.routes.draw do
-  root "homes#index"
-  devise_for :users
-  devise_scope :user do
-    get '/users/sign_out' => 'devise/sessions#destroy'
-    post '/users/edit' => 'devise/registrations#edit'
-  end
-  resources :users
-
+root "homes#index"
   resources :dishes do
-    resources :reviews do
-      resources :votes, only: [:create, :edit, :update, :destroy]
-    end
-  end
+    resources :reviews, only: [:new, :create, :edit, :update, :destroy]
+ end
+
+  resources :reviews, only: [:new, :create, :edit, :update, :destroy] do
+   resources :votes, defaults: { format: 'json' }
+ end
+
+ devise_for :users
+ devise_scope :user do
+   get '/users/sign_out' => 'devise/sessions#destroy'
+   post '/users/edit' => 'devise/registrations#edit'
+ end
+ resources :users
+ resources :homes, only: [:index]
 
   namespace :admin do
     resources :dishes do

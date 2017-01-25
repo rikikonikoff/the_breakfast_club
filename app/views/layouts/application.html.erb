@@ -6,6 +6,8 @@
       <%= stylesheet_link_tag 'welcome' if controller_name == 'homes' %>
       <%= csrf_meta_tags %>
       <%= stylesheet_link_tag 'application', media: 'all' %>
+      <%= javascript_include_tag 'application' %>
+      <%= favicon_link_tag 'http://www.stlawu.edu/sites/default/files/Culture-Eats-Strategy-For-Breakfast-1.jpg' %>
   </head>
 
   <% if controller_name != 'homes' %>

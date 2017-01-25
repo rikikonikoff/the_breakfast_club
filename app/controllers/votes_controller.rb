@@ -1,98 +1,47 @@
 class VotesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :login_user, :set_params
+
+  skip_before_action :verify_authenticity_token
 
   def create
     @review = Review.find(params[:review_id])
-    @dish = Dish.find(params[:dish_id])
-    @user = current_user
-    @value = params[:vote_value]
-    @vote = Vote.new(user: @user, review: @review, vote_value: @value)
+    @value = params[:value]
+    @vote = Vote.where(user: current_user, review: @review).first
 
     if @vote.nil?
-      @vote = Vote.new(review: @review, user: @user, vote_value: @value)
-    elsif @vote.vote_value == params[:vote_value].to_i
-      @vote.vote_value = 0
+      @vote = Vote.new(review: @review, value: @value)
+      @vote.user = current_user
+    elsif @vote.value == params[:value].to_i
+      @vote.value = 0
     else
-      @vote.vote_value = params[:vote_value].to_i
+      @vote.value = params[:value].to_i
     end
 
     if @vote.save
-      @review.update_attributes(net_votes: @review.votes_count)
+      @review.update_attributes(sum_votes: @review.votes_total)
       @review.save
 
       respond_to do |format|
-        format.json { render json: { votes_count: @review.net_votes, review_id: @review.id } }
+        format.json { render json: { votes_count: @review.sum_votes, review_id: @review.id } }
       end
+
     else
       flash[:error] = 'Something went wrong with your request.'
-      redirect_to @dish
-    end
-  end
-
-  def edit
-    @vote = Vote.find(vote_params)
-    @review = Review.find(params[:review_id])
-    @dish = Dish.find(params[:dish_id])
-    @user = current_user
-  end
-
-  def update
-    @vote = Vote.find(vote_params)
-    @review = Review.find(params[:review_id])
-    @dish = Dish.find(params[:dish_id])
-    @user = current_user
-
-    if @user == @vote.user
-      if @vote.vote_value == 1
-        @review.upvote_count -= 1
-      elsif @vote.vote_value == -1
-        @review.downvote_count -=1
-      end
-
-      @vote.vote_value = 0
-
-      if @vote.save
-        if @vote.vote_value == 1
-          @review.upvote_count += 1
-        elsif @vote.vote_value == -1
-          @review.downvote_count += 1
-        end
-
-        @review.net_votes = @vote.upvote_count - @vote.downvote_count
-        redirect_to @dish
-      else
-        flash[:notice] = @vote.errors.full_messages.to_sentence
-        render :edit
-      end
-    else
-      flash[:notice] = "You can't change someone else's vote"
-    end
-  end
-
-  def destroy
-    @vote = Vote.find(vote_params)
-    @review = Review.find(params[:review_id])
-    @dish = Dish.find(params[:dish_id])
-    @user = current_user
-
-    if @user == @vote.user
-      if @vote.vote_value == 1
-        @review.upvote_count -= 1
-      elsif @vote.vote_value == -1
-        @review.downvote_count -=1
-      end
-
-      @vote.destroy
-      @review.net_votes = @vote.upvote_count - @vote.downvote_count
-      redirect_to @dish
-    else
-      flash[:notice] = "You can't change someone else's vote"
+      redirect_to :back
     end
   end
 
   private
 
-  def vote_params
-    params.require(:vote).permit(:vote_value, :user_id, :review_id)
+  def set_params
+    @review = Review.find(params[:review_id])
+    @value = params[:value]
+  end
+
+  def login_user
+    unless user_signed_in?
+      flash[:error] = 'You must be signed in to vote.'
+      redirect_to new_user_session_path
+    end
   end
 end
