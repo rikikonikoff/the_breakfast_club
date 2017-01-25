@@ -43,7 +43,7 @@ render() {
       created_at = {review.created_at}
       upvote_count = {review.upvote_count}
       downvote_count = {review.downvote_count}
-      net_votes = {review.net_votes}
+      sum_votes = {review.sum_votes}
       />
     );
   });

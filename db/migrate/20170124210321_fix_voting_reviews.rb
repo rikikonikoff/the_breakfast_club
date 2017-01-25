@@ -2,7 +2,7 @@ class FixVotingReviews < ActiveRecord::Migration[5.0]
   def up
     remove_column :reviews, :upvote_count
     remove_column :reviews, :downvote_count
-    remove_column :reviews, :net_votes
+    remove_column :reviews, :sum_votes
   end
 
   def down
