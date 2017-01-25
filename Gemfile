@@ -3,6 +3,8 @@ ruby '2.2.5'
 
 gem 'foundation-rails'
 gem 'rails'
+gem 'active_model_serializers'
+gem 'faker'
 gem 'pg'
 gem 'puma'
 gem 'sass-rails'
@@ -12,6 +14,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', '~> 4.3'
+gem 'sendgrid'
 
 group :development do
   gem 'listen'
