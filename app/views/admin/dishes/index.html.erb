@@ -1,0 +1,12 @@
+<% if current_user && current_user.admin? %>
+  <div>
+    <ul style="list-style: none;">
+      <% @dishes.each do |dish| %>
+        <li>
+          <%= link_to dish.name, admin_dish_path(dish) %>
+          <%= link_to 'Delete this Dish', admin_dish_path(dish), method: :delete %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
