@@ -50,7 +50,7 @@ RSpec.feature "admin can see all of the dishes", %{
     expect(page).to have_content "Dish deleted"
   end
 
-  scenario "admin deletes a review" do
+  xscenario "admin deletes a review" do
     admin = FactoryGirl.create(:user, admin: true)
     dish = FactoryGirl.create(:dish)
     review_1 = FactoryGirl.create(:review, dish: dish)
@@ -76,7 +76,7 @@ RSpec.feature "admin can see all of the dishes", %{
     expect(page).to have_content "Sorry, you can't delete someone else's dish"
   end
 
-  scenario "non-admin tries to delete a review that they didn't write" do
+  xscenario "non-admin tries to delete a review that they didn't write" do
     user = FactoryGirl.create(:user)
     user_2 = FactoryGirl.create(:user)
     dish = FactoryGirl.create(:dish, creator: user_2)

@@ -24,12 +24,12 @@ feature "user views reviews for a given dish", %{
     expect(page).to_not have_content review_2.body
   end
 
-  scenario "user can upvote or downvote a review" do
+  xscenario "user can upvote or downvote a review" do
     review = FactoryGirl.create(:review)
 
     visit dish_path(review.dish)
 
-    expect(page).to have_link "Like"
-    expect(page).to have_link "Dislike"
+    expect(page).to have_link "Likey"
+    expect(page).to have_link "Dislikey"
   end
 end

@@ -69,7 +69,7 @@ class ReviewsController < ApplicationController
       :dish_id,
       :upvote_count,
       :downvote_count,
-      :net_votes,
+      :sum_votes,
       :votes
     ).merge(
       dish: Dish.find(params[:dish_id]),

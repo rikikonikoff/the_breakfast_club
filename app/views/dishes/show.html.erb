@@ -5,14 +5,19 @@
 
 <ul style="list-style: none;">
   <% @reviews.each do |review| %>
-    <li>
-      <%= review.rating %> (<%= review.reviewer.username %>) <%= review.body %>
-      <%= link_to "Like", dish_review_votes_path(@dish, review, vote_value: 1), method: :create %>
-      Votes: <%= review.net_votes %>
-      <%= link_to "Dislike", dish_review_votes_path(@dish, review, vote_value: -1), method: :create %>
-      <%= button_to "Edit this Review", edit_dish_review_path(@dish, review), method: :get %>
-      <%= button_to "Delete this Review", dish_review_path(@dish, review), method: :delete %>
-    </li>
+  <div class='review'>
+          Rating: <%= review.rating %>
+          <p class="review-description">
+            Description: <%= review.body %>
+          </p>
+          <br />
+          <p id='voting-number' class="total-votes-<%= review.id %>"><%= review.sum_votes %></p>
+            <%= button_to "Likey", review_votes_path(review, value: 1), id: 'upvote', data: { dishid: "#{@dish.id}", reviewid: "#{review.id}" } %>
+            <%= button_to "Dislikey", review_votes_path(review, value: -1), id: 'downvote', data: { dishid: "#{@dish.id}", reviewid: "#{review.id}" } %>
+            <%= button_to "Edit Review", edit_dish_review_path(@dish, review), method: :get %>
+            <%= button_to "Delete Review", dish_review_path(@dish, review), method: :delete %>
+
+          </div>
   <% end %>
 </ul>
 
