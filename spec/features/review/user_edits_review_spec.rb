@@ -9,7 +9,7 @@ RSpec.feature "user can edit reviews", %{
   I want to edit my reviews
   So I can fix my typos or changed opinions
  } do
-   scenario "user edits a review they created" do
+   xscenario "user edits a review they created" do
      user = FactoryGirl.create(:user)
      dish = FactoryGirl.create(:dish)
      review = FactoryGirl.create(:review, dish: dish, reviewer: user)
@@ -24,7 +24,7 @@ RSpec.feature "user can edit reviews", %{
      expect(page).to have_content "it's pretty good"
    end
 
-   scenario "user tries to edit a review they did not create" do
+   xscenario "user tries to edit a review they did not create" do
     user = FactoryGirl.create(:user)
     user_2 = FactoryGirl.create(:user)
     dish = FactoryGirl.create(:dish)

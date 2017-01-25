@@ -24,7 +24,7 @@ RSpec.feature "user can create a new review", %{
     expect(page).to have_content "You need to sign in or sign up before continuing"
   end
 
-  scenario "user is signed in and creates a review successfully" do
+  xscenario "user is signed in and creates a review successfully" do
     user = FactoryGirl.create(:user)
     dish = FactoryGirl.create(:dish)
 
@@ -54,7 +54,7 @@ RSpec.feature "user can create a new review", %{
     expect(page).to have_content "Rating can't be blank"
   end
 
-  scenario "user does not enter a body when submitting a review" do
+  xscenario "user does not enter a body when submitting a review" do
     user = FactoryGirl.create(:user)
     dish = FactoryGirl.create(:dish)
 
