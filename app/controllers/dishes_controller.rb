@@ -5,7 +5,7 @@ class DishesController < ApplicationController
     @dishes = Dish.all
 
     if params[:search]
-      @dishes = Dish.search(params[:search].downcase)
+      @dishes = Dish.search(params[:search])
       if @dishes.empty?
         flash[:notice] = "There are no dishes containing the term #{params[:search]}"
       end
