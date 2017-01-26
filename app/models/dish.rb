@@ -1,5 +1,5 @@
 class Dish < ApplicationRecord
-  attr_accessor :image, :image_cache, :remove_image
+  attr_accessor :login, :image, :image_cache, :remove_image
 
   belongs_to :creator, class_name: :User
   has_many :reviews, dependent: :destroy
