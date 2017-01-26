@@ -10,7 +10,7 @@ feature "user views dishes", %{
   I want to view a list of dishes
   So that I can get breakfast ideas
   } do
-  scenario "user sees a list of dishes on the index page" do
+  xscenario "user sees a list of dishes on the index page" do
     user = FactoryGirl.create(:user)
     dish_1 = FactoryGirl.create(:dish)
     dish_2 = FactoryGirl.create(:dish)
