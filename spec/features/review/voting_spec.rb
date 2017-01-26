@@ -1,56 +1,89 @@
 require 'rails_helper'
 
 # Acceptance Criteria
-# * User can click 'Likey' or 'Dislikey' for each review
+# * User can click 'Like' or 'Dislike' for each review
 # * User can change their vote
 # * User can only have one vote per review
 
-RSpec.feature %{
+feature 'user upvotes and downvotes', %{
   As a user
   I want to vote on a review
   To show others what I think of it
   } do
 
-  xscenario "user likes a review" do
-    dish = FactoryGirl.create(:dish)
-    review = FactoryGirl.create(:review, dish: dish)
+  scenario "user upvotes a review" do
+    user7 = FactoryGirl.create(:user)
+    dish = FactoryGirl.create(:dish, creator: user7)
+    review = FactoryGirl.create(:review, reviewer: user7, dish: dish)
+
+    visit new_user_session_path
+
+    fill_in "Email", with: user7.email
+    fill_in "Password", with: user7.password
+    click_button "Log in"
 
     visit dish_path(dish)
-    click_button 'Likey'
 
-    expect(page).to have_content "Review Liked"
+    click_button 'Like'
+
+    expect(page).to have_content '1'
   end
 
-  xscenario "user dislikes a review" do
-    dish = FactoryGirl.create(:dish)
-    review = FactoryGirl.create(:review, dish: dish)
+  scenario "user downvotes a review" do
+    user7 = FactoryGirl.create(:user)
+    dish = FactoryGirl.create(:dish, creator: user7)
+    review = FactoryGirl.create(:review, reviewer: user7, dish: dish)
+
+    visit new_user_session_path
+
+    fill_in "Email", with: user7.email
+    fill_in "Password", with: user7.password
+    click_button "Log in"
 
     visit dish_path(dish)
-    click_button 'Dislikey'
 
-    expect(page).to have_content "Review Disliked"
+    click_button 'Dislike'
+
+    expect(page).to have_content '-1'
   end
 
-  xscenario "user tries to like or dislike a review more than once" do
-    dish = FactoryGirl.create(:dish)
-    review = FactoryGirl.create(:review, dish: dish)
+  scenario "user changes his or her vote" do
+    user7 = FactoryGirl.create(:user)
+    dish = FactoryGirl.create(:dish, creator: user7)
+    review = FactoryGirl.create(:review, reviewer: user7, dish: dish)
+
+    visit new_user_session_path
+
+    fill_in "Email", with: user7.email
+    fill_in "Password", with: user7.password
+    click_button "Log in"
 
     visit dish_path(dish)
-    click_button 'Likey'
-    click_button 'Likey'
+    click_button 'Like'
 
-    expect(page).to have_content "You already like this review"
+    visit dish_path(dish)
+    click_button 'Dislike'
+
+    expect(page).to have_content '-1'
   end
 
-  xscenario "user changes his or her vote" do
-    dish = FactoryGirl.create(:dish)
-    review = FactoryGirl.create(:review, dish: dish)
+  scenario "user deletes vote" do
+    user7 = FactoryGirl.create(:user)
+    dish = FactoryGirl.create(:dish, creator: user7)
+    review = FactoryGirl.create(:review, reviewer: user7, dish: dish)
+
+    visit new_user_session_path
+
+    fill_in "Email", with: user7.email
+    fill_in "Password", with: user7.password
+    click_button "Log in"
 
     visit dish_path(dish)
-    click_button 'Likey'
-    click_button 'Dislikey'
+    click_button 'Like'
 
-    expect(page).to_not have_content "Review Liked"
-    expect(page).to have_content "Review Disliked"
+    visit dish_path(dish)
+    click_button 'Like'
+
+    expect(page).to have_content '0'
   end
 end
