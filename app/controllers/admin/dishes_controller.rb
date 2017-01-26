@@ -3,6 +3,13 @@ class Admin::DishesController < ApplicationController
 
   def index
     @dishes = Dish.all
+
+    if params[:search]
+      @dishes = Dish.search(params[:search])
+      if @dishes.empty?
+        flash[:notice] = "There are no dishes containing the term #{params[:search]}"
+      end
+    end
   end
 
   def show

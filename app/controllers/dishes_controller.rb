@@ -2,7 +2,7 @@ class DishesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @dishes = Dish.all
+    @dishes = nil;
 
     if params[:search]
       @dishes = Dish.search(params[:search])
