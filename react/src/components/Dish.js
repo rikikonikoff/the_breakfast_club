@@ -1,6 +1,7 @@
-// ESLint esversion: 6
 
+// ESLint esversion: 6
 import React from 'react';
+import { Callout } from 'react-foundation';
 
  const Dish = props => {
   let url = `/dishes/${props.id}`;
@@ -21,10 +22,18 @@ import React from 'react';
   }
 
   return(
-     <div>
-      <p onClick = {onClick}> {props.name} </p>
-      {showDetails}
-     </div>
+    <div>
+      <Callout className="callout">
+        <div className="small-6 columns">
+          <img src={props.image} alt="dish photo" className="dish-img"/><br/><br/>
+          <p>{props.name}</p>
+        </div>
+        <div className="small-6 columns">
+          <p onClick = {onClick}>Show More</p>
+            {showDetails}
+        </div>
+      </Callout><br/>
+    </div>
   );
 };
 
