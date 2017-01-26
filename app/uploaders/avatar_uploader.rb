@@ -24,7 +24,7 @@ end
   #   # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
   #
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
-    'default_avatar.png'
+    'http://s3.amazonaws.com/37assets/svn/765-default-avatar.png'
   end
 
   # Process files as they are uploaded:
