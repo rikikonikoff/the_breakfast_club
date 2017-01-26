@@ -25,13 +25,7 @@ root "homes#index"
 
   namespace :api do
     namespace :v1 do
-      resources :dishes do
-        resources :users
-        resources :reviews
-      end
-      resources :reviews do
-        resources :votes
-      end
+      resources :dishes, only: [:index]
     end
   end
 end
