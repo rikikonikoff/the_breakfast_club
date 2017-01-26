@@ -1,4 +1,3 @@
-var path = require('path');
 var webpack = require('webpack');
 
 var config = {
@@ -12,21 +11,33 @@ var config = {
   module: {
     loaders: [
       {
+        include: /\.json$/,
+        loader: 'json-loader'
+      },
+      {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel'
       }
     ]
   },
-  devtool: 'eval-source-map'
-};
+  resolve: {
+    extensions: ['', '.json', '.jsx', '.js']
+  },
+  devtool: 'eval-source-map',
+  plugins: []
+}
 
-if (process.env.NODE_ENV === 'production') {
-  delete config.devtool;
-  var webpack = require('webpack');
-  config.plugins = [
-    new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' })
-  ];
+
+switch(process.env.NODE_ENV) {
+  case 'development':
+    config.plugins.push(new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"development"' }))
+  case 'staging':
+    delete config.devtool;
+    config.plugins.push(new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"staging"' }))
+  case 'production':
+    delete config.devtool;
+    config.plugins.push(new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }))
 }
 
 module.exports = config;

@@ -10,14 +10,20 @@ module.exports = function(config) {
 
     // files that Karma will server to the browser
     files: [
+      // load fixtures
+      'test/fixtures/**/*.json',
       // use Babel polyfill to emulate a full ES6 environment in PhantomJS
       '../node_modules/babel-polyfill/dist/polyfill.js',
       // entry file for Webpack
-      'test/testHelper.js'
+      'test/testHelper.js',
+      // use whatwg-fetch polyfill
+      '../node_modules/whatwg-fetch/fetch.js'
     ],
 
     // before serving test/testHelper.js to the browser
     preprocessors: {
+      // process json files with karma-json-fixtures-preprocessor
+      'test/fixtures/**/*.json': ['json_fixtures'],
       'test/testHelper.js': [
         // use karma-webpack to preprocess the file via webpack
         'webpack',
@@ -29,7 +35,7 @@ module.exports = function(config) {
     // webpack configuration used by karma-webpack
     webpack: {
       // generate sourcemaps
-      devtool: 'eval-source-map',
+      devtool: 'inline-source-map',
       // enzyme-specific setup
       externals: {
         'cheerio': 'window',
@@ -39,24 +45,22 @@ module.exports = function(config) {
       },
       module: {
         loaders: [
+          {
+            include: /\.json$/,
+            loader: 'json-loader'
+          },
           // use babel-loader to transpile the test and src folders
           {
             test: /\.jsx?$/,
             exclude: /node_modules/,
             loader: 'babel'
-          },
-          // use isparta-loader for ES6 code coverage in the src folder
-          {
-            test: /\.jsx?$/,
-            exclude: /(node_modules|test)/,
-            loader: 'isparta'
           }
         ]
       },
 
       // relative path starts out at the src folder when importing modules
       resolve: {
-        root: path.resolve(__dirname, 'src'),
+        root: path.resolve(__dirname, './src')
       }
     },
 
@@ -68,26 +72,25 @@ module.exports = function(config) {
     // test reporters that Karma should use
     reporters: [
       // use karma-spec-reporter to report results to the browser's console
-      'spec',
-      // use karma-coverage to report test coverage
-      'coverage'
+      'progress',
+      'spec'
     ],
+
+    jsonFixturesPreprocessor: {
+      stripPrefix: 'test/fixtures/'
+    },
 
     // karma-spec-reporter configuration
     specReporter: {
-      // remove meaningless stack trace when tests do not pass
-      maxLogLines: 1,
-      // do not print information about tests that are passing
-      suppressPassed: true
-    },
+      suppressErrorSummary: true,  // do not print error summary
 
-    // karma-coverage configuration
-    coverageReporter: {
-      // output coverage results to the coverage folder in the project's root
-      dir: 'coverage',
-      subdir: '.',
-      // output coverage results as html
-      type: 'html'
+      // remove meaningless stack trace when tests do not pass
+      maxLogLines: 2,
+
+      // do not print information about tests that are passing
+      suppressPassed: true,
+      suppressSkipped: true
+
     }
-  });
-};
+  })
+}
