@@ -1,5 +1,4 @@
 import App from '../src/components/App';
-import React from 'react';
 
 // User Story:
 // As a user
@@ -24,36 +23,23 @@ describe('Dishes Index', () => {
     wrapper.unmount();
   });
 
-  describe('visit dishes index page', () => {
+  describe('visiting the dishes homepage', () => {
     beforeEach(() => {
-      let wrapper = mount(
+      wrapper = mount(
         <App />
       );
     });
 
-    it("shows a list of dishes' names and no reviews", done => {
+    it('shows a list of dish names and no reviews', done => {
       setTimeout(() => {
         let pageText = wrapper.text();
 
-        expect(pageText).toMatch("Al's Pancake World fries 1");
+        expect(pageText).toMatch("Al's Pancake World fries 1")
         expect(pageText).toMatch("Al's Pancake World fries 2");
-
         expect(pageText).not.toMatch("This is so yummy 1");
 
         done();
-      }, 0);
-    });
-
-    it("redirects to the show page when you click on a dish", done => {
-      setTimeout(() => {
-        let dish = wrapper.findWhere(n => {
-          return n.text() === "Al's Pancake World fries 1";
-        });
-        simulateIfPresent(dish, 'click');
-      }, 0);
-
-      // expect react component to no longer be present
-      // expect this error: _registerComponent(...): Target container is not a DOM element.
+      },0);
     });
   });
 });

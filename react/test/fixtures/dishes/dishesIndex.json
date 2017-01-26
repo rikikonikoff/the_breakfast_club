@@ -1,4 +1,4 @@
-{"dishes": [{"id": 55,
+[{"id": 55,
   "name": "Al's Pancake World fries 1",
   "description": "This is a test dish",
   "creator":
@@ -57,4 +57,4 @@
        "avatar": {"url": null},
        "admin": false},
      "rating": 3,
-     "body": "This is so yummy 3"}]}]}
+     "body": "This is so yummy 3"}]}]

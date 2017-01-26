@@ -7,9 +7,11 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dishes: []
+      dishes: [],
+      selectedDishId: null
     };
     this.fetchData = this.fetchData.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount(){
@@ -34,6 +36,14 @@ class App extends Component {
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
+  handleClick(id) {
+    if (id === this.state.selectedDishId) {
+      this.setState({ selectedDishId: null });
+    } else {
+      this.setState({ selectedDishId: id });
+    }
+  }
+
   render() {
     let dishes = this.state.dishes.map(dish => {
       return(
@@ -44,6 +54,8 @@ class App extends Component {
         name = {dish.name}
         description = {dish.description}
         reviews = {dish.reviews}
+        onClick = {this.handleClick}
+        clickedState = {this.state.selectedDishId}
         />
       );
     });

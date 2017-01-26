@@ -1,8 +1,6 @@
 import { shallow, mount } from 'enzyme';
 import jasmineEnzyme from 'jasmine-enzyme';
 import React from 'react';
-import $ from 'jquery';
-import 'jasmine-ajax';
 import ReactTestUtils from 'react-addons-test-utils';
 import createResponseFromFixture from './support/createResponseFromFixture';
 import createNoContentResponse from './support/createNoContentResponse';
@@ -25,8 +23,7 @@ Object.assign(global, {
   clickSubmit,
   clickButton,
   select,
-  clickOn,
-  $
+  clickOn
 });
 
 beforeEach(() => {
@@ -37,17 +34,8 @@ afterEach(() => {
   if(global.page) { global.page.unmount(); }
 });
 
-// function to require all modules for a given context
-let requireAll = requireContext => {
-  requireContext.keys().forEach(requireContext);
-};
-
-// require all js files except testHelper.js in the test folder
-requireAll(require.context('./', true, /^((?!testHelper).)*\.jsx?$/));
-
-// require all js files except main.js in the src folder
 // require all js files that end with Spec.js or Spec.jsx in the test folder
-var testsContext = require.context(".", true, /spec.jsx?$/);
+var testsContext = require.context(".", true, /Spec.jsx?$/);
 testsContext.keys().forEach(testsContext);
 
 // output to the browser's console when the tests run
