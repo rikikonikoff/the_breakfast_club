@@ -78,8 +78,12 @@ strong {
   background-color: #C1C9C8;
   font-weight: bold;
   font-size: 18px;
-  height: 200px;
+  height: 300px;
   width: 600px;
   margin: auto;
-  border
+}
+
+.dish-img {
+  width: 400px;
+  height: auto;
 }

@@ -24,9 +24,14 @@ import { Callout } from 'react-foundation';
   return(
     <div>
       <Callout className="callout">
-        <img src={props.image} alt="dish photo" className="img-responsive"/>
-          <p onClick = {onClick}>{props.name}</p>
+        <div className="small-6 columns">
+          <img src={props.image} alt="dish photo" className="dish-img"/><br/><br/>
+          <p>{props.name}</p>
+        </div>
+        <div className="small-6 columns">
+          <p onClick = {onClick}>Show More</p>
             {showDetails}
+        </div>
       </Callout><br/>
     </div>
   );
