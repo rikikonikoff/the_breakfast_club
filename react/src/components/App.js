@@ -38,6 +38,7 @@ class App extends Component {
         name = {dish.name}
         description = {dish.description}
         reviews = {dish.reviews}
+        image = {dish.image}
         />
       );
     });

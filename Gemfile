@@ -16,6 +16,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', '~> 4.3'
 gem 'sendgrid'
 gem 'selenium-webdriver'
+gem 'fog'
 
 group :development do
   gem 'listen'
@@ -31,6 +32,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers', require: false
   gem 'valid_attribute'
+  gem "dotenv-rails"
 end
 
 group :test do

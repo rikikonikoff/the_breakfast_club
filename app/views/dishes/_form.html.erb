@@ -1,5 +1,5 @@
 <div class="small-6 small-centered columns">
-  <%= form_for @dish do |f| %>
+  <%= form_for @dish, :html => {:multipart => true} do |f| %>
     <div>
       <%= f.label :name %>
       <%= f.text_field :name %>

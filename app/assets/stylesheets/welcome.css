@@ -38,6 +38,7 @@ body#home {
   text-align: right;
   color: white;
   font-weight: bolder;
+  font-family: 'Londrina Shadow', cursive;
 }
 
 a {
@@ -67,6 +68,18 @@ button#search {
 }
 
 strong {
-  font-size: 20px;
+  font-size: 22px;
   vertical-align: top;
+}
+
+
+
+.callout {
+  background-color: #C1C9C8;
+  font-weight: bold;
+  font-size: 18px;
+  height: 200px;
+  width: 600px;
+  margin: auto;
+  border
 }
