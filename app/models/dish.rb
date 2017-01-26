@@ -5,6 +5,8 @@ class Dish < ApplicationRecord
 
   validates :name, presence: true
 
+  mount_uploader :image, ImageUploader
+
   def self.search(search)
     where("name ILIKE :search OR description ILIKE :search", search: "%#{search}%")
   end

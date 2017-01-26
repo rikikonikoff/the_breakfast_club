@@ -1,4 +1,16 @@
-<h1><%= @dish.name %></h1>
+<p>
+ <strong>Name:</strong>
+ <%= @dish.name %>
+</p>
+
+<p>
+ <strong>Description:</strong>
+ <%= @dish.description %>
+</p>
+
+<p>
+  <%= image_tag(@dish.image, height: "200px", width: "300px")%>
+</p>
 <div>
   <div class="small-4 columns"><%= button_to "Review this Dish", new_dish_review_path(@dish), method: :get, class: "hollow button" %></div>
   <div class="small-4 columns"><%= button_to "Edit this Dish", edit_dish_path(@dish), method: :get, class: "hollow button" %></div>
