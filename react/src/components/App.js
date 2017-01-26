@@ -1,4 +1,4 @@
-// ESlint esversion: 6
+// ESLint esversion: 6
 
 import React, { Component } from 'react';
 import Dish from './Dish';
@@ -7,18 +7,26 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dishes: []
+      dishes: [],
+      selectedDishId: null
     };
+    this.fetchData = this.fetchData.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount(){
+    this.fetchData();
+    setInterval(this.fetchData, 3000);
+  }
+
+  fetchData(){
     fetch('/api/v1/dishes')
     .then(response => {
       if(response.ok) {
         return response.json();
       } else {
         let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage);
+        error = new Error(errorMessage);
         throw(error);
       }
     })
@@ -26,6 +34,14 @@ class App extends Component {
       this.setState({ dishes: data });
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+
+  handleClick(id) {
+    if (id === this.state.selectedDishId) {
+      this.setState({ selectedDishId: null });
+    } else {
+      this.setState({ selectedDishId: id });
+    }
   }
 
   render() {
@@ -38,6 +54,8 @@ class App extends Component {
         name = {dish.name}
         description = {dish.description}
         reviews = {dish.reviews}
+        onClick = {this.handleClick}
+        clickedState = {this.state.selectedDishId}
         />
       );
     });
