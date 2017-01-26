@@ -1,4 +1,4 @@
-// ESlint esversion: 6
+// ESLint esversion: 6
 
 import React from 'react';
 

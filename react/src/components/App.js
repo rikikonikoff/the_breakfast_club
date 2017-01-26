@@ -1,4 +1,4 @@
-// ESlint esversion: 6
+// ESLint esversion: 6
 
 import React, { Component } from 'react';
 import Dish from './Dish';
@@ -9,16 +9,22 @@ class App extends Component {
     this.state = {
       dishes: []
     };
+    this.fetchData = this.fetchData.bind(this);
   }
 
   componentDidMount(){
+    this.fetchData();
+    setInterval(this.fetchData, 3000);
+  }
+
+  fetchData(){
     fetch('/api/v1/dishes')
     .then(response => {
       if(response.ok) {
         return response.json();
       } else {
         let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage);
+        error = new Error(errorMessage);
         throw(error);
       }
     })
