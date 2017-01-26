@@ -1,16 +1,21 @@
 <div>
-  <ul style="list-style: none;">
-    <% @dishes.each do |dish| %>
+  <% if @dishes.nil? %>
+    <div id="app"></div>
+  <% else %>
+    <ul style="list-style: none;">
+      <% @dishes.each do |dish| %>
       <li>
         <%= link_to dish.name, dish_path(dish) %>
       </li>
-    <% end %>
-  </ul>
+      <% end %>
+    </ul>
+  <% end %>
 </div>
 
-<div id="app"></div>
 
-  <div>
+
+<br>
+
+<div>
     <%= link_to "Add a New Dish", new_dish_path, class: "hollow button" %>
-  </div>
 </div>
