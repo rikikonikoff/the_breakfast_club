@@ -1,15 +1,15 @@
 <div class="small-6 small-centered columns">
   <%= form_for [@dish, @review] do |f| %>
-    <li>
+    <div>
       <%= f.label :rating %>
       <%= f.text_field :rating %>
-    </li>
-    <li>
+    </div>
+    <div>
       <%= f.label :body, "Comments" %>
       <%= f.text_field :body %>
-    </li>
-    <li>
+    </div>
+    <div>
       <%= f.submit "Review #{@dish.name}", class: "hollow button" %>
-    </li>
+    </div>
   <% end %>
 </div>
