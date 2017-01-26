@@ -5,6 +5,7 @@ class VotesController < ApplicationController
 
   def create
     @review = Review.find(params[:review_id])
+    @dish = Dish.find(@review.dish_id)
     @value = params[:value]
     @vote = Vote.where(user: current_user, review: @review).first
 
@@ -19,12 +20,7 @@ class VotesController < ApplicationController
 
     if @vote.save
       @review.update_attributes(sum_votes: @review.votes_total)
-      @review.save
-
-      respond_to do |format|
-        format.json { render json: { votes_count: @review.sum_votes, review_id: @review.id } }
-      end
-
+      redirect_to @dish
     else
       flash[:error] = 'Something went wrong with your request.'
       redirect_to :back
