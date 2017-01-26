@@ -1,15 +1,19 @@
 <div class="small-6 small-centered columns">
   <%= form_for @dish do |f| %>
-    <li>
+    <div>
       <%= f.label :name %>
       <%= f.text_field :name %>
-    </li>
-    <li>
+    </div>
+    <div>
       <%= f.label :description %>
       <%= f.text_field :description %>
-    </li>
-    <li>
+    </div>
+    <div class="field">
+       <%= f.label :image %><br>
+       <%= f.file_field :image %>
+    </div>
+    <div>
       <%= f.submit "Submit Dish", class: "hollow button" %>
-    </li>
+    </div>
   <% end %>
 </div>
