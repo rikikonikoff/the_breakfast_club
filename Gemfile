@@ -32,7 +32,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers', require: false
   gem 'valid_attribute'
-  gem "dotenv-rails"
+  gem 'dotenv-rails'
 end
 
 group :test do
