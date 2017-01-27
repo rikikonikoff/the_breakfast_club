@@ -4,7 +4,7 @@ body#other {
 }
 
 body#home {
-  background: url('http://imgur.com/keA9ohZ.jpg') no-repeat center center fixed;
+  background: url('http://imgur.com/1Q756V8.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -92,7 +92,7 @@ strong {
   background-color: #C1C9C8;
   font-weight: bold;
   font-size: 18px;
-  height: 300px;
+  overflow: auto;
   width: 800px;
   margin: auto;
   vertical-align: middle;
@@ -102,7 +102,7 @@ strong {
   background-color: #C1C9C8;
   font-weight: bold;
   font-size: 18px;
-  height: 400px;
+  overflow: auto;
   width: 800px;
   margin: auto;
 }
