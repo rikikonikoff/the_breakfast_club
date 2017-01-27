@@ -37,3 +37,10 @@ Finally, users can review their own dishes or dishes created by other users comp
 
 ![alt text](http://i.imgur.com/YSyhpd4.png)
 ![alt text](http://i.imgur.com/3XsBTdo.png)
+
+### Who we are:
+
+Matt McDermott: https://github.com/mmcderm8
+Riki Konikoff: https://github.com/rikikonikoff
+Tom Scott: https://github.com/bigtomscott
+Audrey Gehring: https://github.com/audreygehring
