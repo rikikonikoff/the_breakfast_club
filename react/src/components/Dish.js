@@ -26,9 +26,9 @@ import { Callout } from 'react-foundation';
       <Callout className="callout">
         <div className="small-6 columns">
           <img src={props.image} alt="dish photo" className="dish-img"/>
-          <a href={url} className="dish-name">{props.name}</a>
         </div>
         <div className="small-6 columns">
+        <a href={url} className="dish-name">{props.name}</a>
           <p onClick = {onClick}>Show More</p>
             {showDetails}
         </div>

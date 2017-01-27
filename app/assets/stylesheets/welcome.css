@@ -116,12 +116,18 @@ strong {
   margin: auto;
 }
 
+.reviews-title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
 .search-bar {
     position: relative;
     left: 120px;
     top: -55px;
     width: 300px;
     padding: 10px;
+    height: 15px;
 }
 
 .dish-img {
