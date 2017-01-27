@@ -23,7 +23,7 @@
   <% @reviews.each do |review| %>
     <div class="callout" id="individual-review">
       <div>
-        <i><%= review.body %> - <%= review.rating %>/5 (<%= review.reviewer.username %>)</i><br>
+        <i><%= review.body %> <br> <%= review.rating %>/5 Stars (<%= review.reviewer.username %>)</i><br>
         Votes Total: <%= review.sum_votes %>
       </div>
 

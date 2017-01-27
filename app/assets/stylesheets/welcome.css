@@ -111,7 +111,7 @@ strong {
   background-color: #C1C9C8;
   font-weight: bold;
   font-size: 18px;
-  height: 125px;
+  overflow: auto;
   width: 700px;
   margin: auto;
 }
