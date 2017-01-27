@@ -76,7 +76,7 @@ input:hover {
 input#search {
   padding-top: 0px;
   padding-bottom: 0px;
-  height: 25px;
+  height: 30px;
 }
 
 button#search {
@@ -102,7 +102,6 @@ strong {
   background-color: #C1C9C8;
   font-weight: bold;
   font-size: 18px;
-  height: 100px;
   overflow: auto;
   width: 800px;
   margin: auto;
