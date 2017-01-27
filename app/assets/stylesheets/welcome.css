@@ -102,9 +102,26 @@ strong {
   background-color: #C1C9C8;
   font-weight: bold;
   font-size: 18px;
-  height: 500px;
+  height: 400px;
   width: 800px;
   margin: auto;
+}
+
+.callout#individual-review {
+  background-color: #C1C9C8;
+  font-weight: bold;
+  font-size: 18px;
+  height: 125px;
+  width: 700px;
+  margin: auto;
+}
+
+.search-bar {
+    position: relative;
+    left: 120px;
+    top: -55px;
+    width: 300px;
+    padding: 10px;
 }
 
 .dish-img {
