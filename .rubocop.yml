@@ -201,9 +201,6 @@ TrailingComma:
 TrivialAccessors:
   Enabled: false
 
-VariableInterpolation:
-  Enabled: false
-
 WhenThen:
   Enabled: false
 

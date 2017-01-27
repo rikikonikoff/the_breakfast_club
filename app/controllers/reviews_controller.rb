@@ -1,9 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!
 
-  def index
-  end
-
   def new
     @review = Review.new
     @dish = Dish.find(params[:dish_id])
