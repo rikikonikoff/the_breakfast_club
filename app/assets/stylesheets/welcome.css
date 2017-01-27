@@ -4,7 +4,7 @@ body#other {
 }
 
 body#home {
-  background: url('http://imgur.com/keA9ohZ.jpg') no-repeat center center fixed;
+  background: url('http://imgur.com/1Q756V8.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -105,6 +105,23 @@ strong {
   overflow: auto;
   width: 800px;
   margin: auto;
+}
+
+.callout#individual-review {
+  background-color: #C1C9C8;
+  font-weight: bold;
+  font-size: 18px;
+  height: 125px;
+  width: 700px;
+  margin: auto;
+}
+
+.search-bar {
+    position: relative;
+    left: 120px;
+    top: -55px;
+    width: 300px;
+    padding: 10px;
 }
 
 .dish-img {
