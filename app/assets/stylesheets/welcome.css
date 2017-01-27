@@ -11,6 +11,10 @@ body#home {
   background-size: cover;
 }
 
+.enter {
+  color: #0000e6;
+}
+
 .hollow.button {
   padding: 10px;
   border-radius: 20px;
@@ -39,12 +43,24 @@ body#home {
   color: white;
   font-weight: bolder;
   font-family: 'Londrina Shadow', cursive;
+  font-size: 85px;
+  text-align: right;
 }
 
 a {
   margin-top: 30px;
-  color: black;
+  color: white;
   text-align: right;
+}
+
+a#home {
+  color: #ccddff;
+}
+
+h1#enter {
+  color: #0000e6;
+  font-size: 40px;
+  padding-left: 0;
 }
 
 input {
@@ -72,18 +88,30 @@ strong {
   vertical-align: top;
 }
 
-
-
 .callout {
   background-color: #C1C9C8;
   font-weight: bold;
   font-size: 18px;
   height: 300px;
-  width: 600px;
+  width: 800px;
+  margin: auto;
+  vertical-align: middle;
+}
+
+.callout#review-page {
+  background-color: #C1C9C8;
+  font-weight: bold;
+  font-size: 18px;
+  height: 500px;
+  width: 800px;
   margin: auto;
 }
 
 .dish-img {
-  width: 400px;
+  width: 300px;
   height: auto;
+}
+
+.dish-name {
+  font-size: 25px;
 }

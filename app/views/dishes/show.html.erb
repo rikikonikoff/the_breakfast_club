@@ -1,23 +1,19 @@
-<p>
-  <strong><%= @dish.name %></strong>
-</p>
-
-<p>
-  <strong><%= @dish.description %></strong>
-</p>
-
-<p>
-  <%= image_tag(@dish.image, height: "200px", width: "300px")%>
-</p>
-<div>
-  <div class="small-4 columns"><%= button_to "Review this Dish", new_dish_review_path(@dish), method: :get, class: "hollow button" %></div>
-  <div class="small-4 columns"><%= button_to "Edit this Dish", edit_dish_path(@dish), method: :get, class: "hollow button" %></div>
-  <div class="small-4 columns"><%= button_to "Delete this Dish", dish_path(@dish), method: :delete, class: "hollow button" %></div>
-</div><br>
-<br>
-
-<div>
-  <p>Created by: <%= @dish.creator.username %></p>
+<div class="callout" id="review-page">
+  <div class="small-6 columns">
+    <%= image_tag(@dish.image, height: "200px", width: "300px")%>
+  </div>
+  <div class="small-6 columns">
+    <strong><%= @dish.name %></strong><br>
+    <i>Created by: <%= @dish.creator.username %></i><br>
+    <%= @dish.description %><br><br>
+  </div>
+  <div>
+    <div><%= button_to "Edit this Dish", edit_dish_path(@dish), method: :get, class: "hollow button" %></div><br>
+    <div><%= button_to "Delete this Dish", dish_path(@dish), method: :delete, class: "hollow button" %></div><br>
+  </div>
+  <div>
+    <div class="small-6 columns"><%= button_to "Review this Dish", new_dish_review_path(@dish), method: :get, class: "hollow button" %></div>
+  </div>
 </div>
 
 <div>
@@ -31,8 +27,8 @@
 
       <p id='voting-number' class="total-votes-<%= review.id %>">
         Votes Total: <%= review.sum_votes %>
-        <%= button_to "Like", review_votes_path(review, value: 1), id: 'upvote', data: { dishid: "#{@dish.id}", reviewid: "#{review.id}" } %>
-        <%= button_to "Dislike", review_votes_path(review, value: -1), id: 'downvote', data: { dishid: "#{@dish.id}", reviewid: "#{review.id}" } %>
+        <div class="button hollow"><%= button_to "Like", review_votes_path(review, value: 1), id: 'upvote', data: { dishid: "#{@dish.id}", reviewid: "#{review.id}" } %></div>
+        <div class="button hollow"><%= button_to "Dislike", review_votes_path(review, value: -1), id: 'downvote', data: { dishid: "#{@dish.id}", reviewid: "#{review.id}" } %></div>
       </p>
 
       <div>
