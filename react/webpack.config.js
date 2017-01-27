@@ -26,18 +26,18 @@ var config = {
   },
   devtool: 'eval-source-map',
   plugins: []
-}
+};
 
 
 switch(process.env.NODE_ENV) {
   case 'development':
-    config.plugins.push(new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"development"' }))
+    config.plugins.push(new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"development"' }));
   case 'staging':
     delete config.devtool;
-    config.plugins.push(new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"staging"' }))
+    config.plugins.push(new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"staging"' }));
   case 'production':
     delete config.devtool;
-    config.plugins.push(new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }))
+    config.plugins.push(new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }));
 }
 
 module.exports = config;
