@@ -24,6 +24,7 @@ Finally, users can review their own dishes or dishes created by other users comp
 ### The Basics
 
 * Built with Ruby on Rails
+* Used React for a live-updating, interactive index page. 
 * Backed with PostgreSQL database
 * Foundation front end with custom CSS
 * Designed to be responsive
