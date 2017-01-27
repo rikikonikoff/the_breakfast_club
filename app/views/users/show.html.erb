@@ -1,4 +1,5 @@
 <div>
   <%= @user.username %>
+  <img src="<%= @user.avatar_url %>" />
   <%= button_to "Edit my account!", edit_user_registration_path, class: "hollow button" %>
 </div>
