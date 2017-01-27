@@ -1,12 +1,11 @@
 <% if current_user && current_user.admin? %>
   <div>
-    <ul style="list-style: none;">
-      <% @users.each do |user| %>
-        <li>
-          <%= user.username %>
-          <%= link_to "Delete #{user.username}'s Account", admin_user_path(user), method: :delete %>
-        </li>
-      <% end %>
-    </ul>
+    <% @users.each do |user| %>
+      <p>
+        <%= user.username %>
+        <%= button_to "Delete #{user.username}'s Account", admin_user_path(user), method: :delete, class: "hollow button" %>
+      </p>
+      <br>
+    <% end %>
   </div>
 <% end %>

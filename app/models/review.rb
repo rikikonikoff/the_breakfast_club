@@ -10,7 +10,6 @@ class Review < ApplicationRecord
   validates :reviewer_id, presence: true
   validates :dish_id, presence: true
 
-
   def votes_total
     if self.votes.nil?
       return 0

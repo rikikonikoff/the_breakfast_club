@@ -28,7 +28,7 @@ RSpec.feature "admin can see all of the users", %{
     login_as(user_1)
     visit admin_users_path
 
-    click_link "Delete #{user_2.username}'s Account"
+    click_button "Delete #{user_2.username}'s Account"
     expect(page).to have_content "User deleted"
     expect(page).to_not have_content user_2.username
   end
